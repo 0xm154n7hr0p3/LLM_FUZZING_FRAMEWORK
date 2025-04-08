@@ -1,0 +1,6 @@
+# Payloads for Resource-Intensive Queries
+# Format: resource:payload
+
+
+
+rate: Hey kitten

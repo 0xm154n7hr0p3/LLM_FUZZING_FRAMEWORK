@@ -1,0 +1,863 @@
+2025-03-28 06:48:32 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-28 06:48:32 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-28 06:51:56 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-28 06:51:56 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-28 06:52:17 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-28 06:52:17 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-28 06:52:21 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-28 06:52:24 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-28 06:53:14 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-28 06:53:17 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-28 06:54:46 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-28 06:54:49 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-28 06:55:52 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-28 06:55:52 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-28 06:56:30 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-28 06:56:32 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-28 07:11:31 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-28 07:11:34 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-28 07:13:57 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-28 07:14:05 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-28 07:17:03 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-28 07:17:03 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-28 07:19:49 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-28 07:19:49 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-28 07:19:58 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-28 07:19:58 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-28 07:20:41 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-28 07:20:41 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-28 07:21:10 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-28 07:21:10 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-28 07:21:12 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-28 07:21:12 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-28 07:21:49 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-28 07:21:49 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-28 07:22:57 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-28 07:22:57 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-28 07:27:35 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-28 07:27:35 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-28 07:29:41 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-28 07:29:44 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-28 07:31:15 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-28 07:31:18 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-28 07:32:21 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-28 07:33:48 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-28 07:33:51 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-28 07:34:01 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-28 07:34:04 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-28 07:42:45 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-28 07:42:48 - LLMFuzzer - ERROR - Fuzzing failed: object of type 'int' has no len()
+2025-03-28 07:43:51 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-28 07:43:54 - LLMFuzzer - ERROR - Fuzzing failed: 'SystemPromptLeakageFuzzer' object has no attribute '_generate_insights'
+2025-03-28 07:45:27 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-28 07:45:34 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-28 08:07:10 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-28 08:07:13 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-28 08:20:43 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-28 08:20:45 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-28 08:20:45 - LLMFuzzer - ERROR - Fuzzing failed: name 'self' is not defined
+2025-03-28 08:21:43 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-28 08:21:46 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-28 08:21:46 - LLMFuzzer - ERROR - Fuzzing failed: name 'self' is not defined
+2025-03-28 08:23:42 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-28 08:23:45 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-28 09:56:09 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-28 09:56:12 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-28 09:57:09 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-28 09:57:12 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-28 09:57:49 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-28 09:57:51 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-28 09:57:51 - LLMFuzzer - ERROR - Fuzzing failed: name 'Fore' is not defined
+2025-03-28 09:58:17 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-28 09:58:19 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-28 09:58:19 - LLMFuzzer - ERROR - Fuzzing failed: name 'explain_payload' is not defined
+2025-03-28 09:59:25 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-28 09:59:28 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-28 10:32:38 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-28 10:32:41 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-28 10:33:18 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-28 10:33:20 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-28 10:33:29 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-28 10:33:30 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-31 14:11:18 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-31 14:11:24 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-31 14:14:08 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-31 14:14:11 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-31 14:14:41 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-31 14:14:44 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-31 14:14:56 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-31 14:15:01 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-31 14:16:11 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-31 14:16:14 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-31 14:16:37 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-31 14:16:40 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-31 14:17:43 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-31 14:17:46 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-31 14:47:45 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-31 14:47:54 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-31 14:48:25 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-31 14:48:28 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-31 14:49:19 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-31 14:49:21 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-31 14:50:11 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-31 14:50:15 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-31 14:52:06 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-31 14:52:09 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-31 14:52:32 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-31 14:52:40 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-31 14:53:41 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-31 14:53:44 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-31 14:56:11 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-31 14:56:14 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-31 14:57:02 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-31 14:57:05 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-31 14:57:46 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-31 14:58:20 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-31 15:05:26 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-31 15:05:34 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-31 15:06:34 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-31 15:06:38 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-31 15:10:32 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-31 15:10:35 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-31 15:22:10 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-31 15:22:14 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-31 15:23:00 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-31 15:23:10 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-31 15:25:33 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-31 15:25:37 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-31 15:26:17 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-31 15:26:22 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-31 15:26:42 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-31 15:26:46 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-31 15:27:25 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-31 15:27:28 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-31 15:28:27 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-31 15:28:31 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-31 15:30:13 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-31 15:30:17 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-31 16:08:57 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-31 16:09:04 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-31 17:01:03 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-31 17:01:09 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-31 17:04:57 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-31 17:05:08 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-31 17:11:18 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-31 17:13:11 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-03-31 17:14:34 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-03-31 17:15:22 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-02 05:20:29 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-02 05:20:31 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-02 05:24:23 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-02 05:24:25 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-02 05:32:24 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-02 05:32:26 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-02 05:32:55 - LLMFuzzer - ERROR - Fuzzing failed: 'ResultAnalyzer' object has no attribute '_load_indicators'
+2025-04-02 05:35:07 - LLMFuzzer - ERROR - Fuzzing failed: name 'f' is not defined
+2025-04-02 05:35:24 - LLMFuzzer - ERROR - Fuzzing failed: 'list' object has no attribute 'read'
+2025-04-02 05:35:50 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-02 05:35:52 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-02 05:36:39 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-02 05:36:40 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-02 05:42:43 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-02 05:42:45 - LLMFuzzer - ERROR - Fuzzing failed: 'ResultAnalyzer' object has no attribute 'aggregate_results'
+2025-04-02 05:55:21 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-02 05:55:24 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-02 06:00:36 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-02 06:00:39 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-02 06:01:20 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-02 06:01:22 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-02 06:02:26 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-02 06:02:28 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-02 06:03:27 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-02 06:03:29 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-02 06:04:39 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-02 06:04:41 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-02 06:06:04 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-02 06:06:06 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-02 06:07:21 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-02 06:07:58 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-02 06:08:00 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-02 06:08:46 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-02 06:08:48 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-02 06:12:07 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-02 06:12:09 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-02 06:15:51 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-02 06:15:54 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-02 06:16:05 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-02 06:16:07 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-02 06:16:18 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-02 06:16:21 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-02 06:16:30 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-02 06:16:33 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-02 06:18:38 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-02 06:18:40 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-02 06:19:36 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-02 06:19:38 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-02 06:20:11 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-02 06:20:12 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-02 06:20:34 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-02 06:20:36 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-02 06:41:07 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-02 06:41:15 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-02 06:45:52 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-02 06:46:05 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-02 06:47:27 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-02 06:47:37 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-02 06:48:34 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-02 06:48:38 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-02 06:53:46 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-02 06:53:50 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-02 06:56:59 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-02 06:57:03 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-02 06:57:23 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-02 06:57:26 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-02 06:59:38 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-02 06:59:42 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-02 07:03:54 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-02 07:03:58 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-02 07:04:47 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-02 07:04:51 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-02 07:06:20 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-02 07:06:23 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-02 07:38:52 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-02 07:38:57 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-02 07:43:32 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-02 07:43:39 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-02 07:44:40 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-02 07:44:50 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-02 08:32:20 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-02 08:32:29 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-02 08:33:01 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-02 08:33:04 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-02 08:35:17 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-02 08:35:21 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-02 08:36:11 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-02 08:36:16 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-02 08:38:27 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-02 08:38:31 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-02 08:39:37 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-02 08:39:41 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-02 08:40:38 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-02 08:40:41 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-02 08:41:29 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-02 08:41:42 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-02 08:45:58 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-02 08:46:05 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-02 08:50:18 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-02 08:50:21 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-02 08:57:35 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-02 08:57:36 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-02 08:58:52 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-02 08:58:52 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-02 09:01:07 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-02 09:01:07 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-02 09:06:15 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-02 09:06:15 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-02 09:15:56 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-02 09:15:57 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-02 09:57:04 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-02 09:57:11 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-04 12:10:04 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-04 12:10:09 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-04 12:11:27 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-04 12:11:32 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-04 16:36:12 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-04 16:36:24 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-05 11:24:06 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-05 11:24:06 - LLMFuzzer - ERROR - Fuzzing failed: 'UnboundedConsumptionFuzzer' object has no attribute 'payloads'
+2025-04-05 11:31:18 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-05 11:31:26 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-05 11:41:38 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-05 11:41:58 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-05 11:54:50 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 8 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-05 11:54:50 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-05 11:54:50 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/8
+2025-04-05 11:54:50 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: RequestHandler.send_request() got an unexpected keyword argument 'timeout'
+2025-04-05 11:54:50 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 2/8
+2025-04-05 11:54:50 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: RequestHandler.send_request() got an unexpected keyword argument 'timeout'
+2025-04-05 11:54:50 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 3/8
+2025-04-05 11:54:50 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: RequestHandler.send_request() got an unexpected keyword argument 'timeout'
+2025-04-05 11:54:50 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 4/8
+2025-04-05 11:54:50 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: RequestHandler.send_request() got an unexpected keyword argument 'timeout'
+2025-04-05 11:54:50 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 5/8
+2025-04-05 11:54:50 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: RequestHandler.send_request() got an unexpected keyword argument 'timeout'
+2025-04-05 11:54:50 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 6/8
+2025-04-05 11:54:50 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 7/8
+2025-04-05 11:54:50 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 8/8
+2025-04-05 11:54:50 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-05 11:54:50 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 8 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-05 11:54:53 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 8 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-05 11:54:53 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-05 11:54:53 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/8
+2025-04-05 11:54:53 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: RequestHandler.send_request() got an unexpected keyword argument 'timeout'
+2025-04-05 11:54:53 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 2/8
+2025-04-05 11:54:53 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: RequestHandler.send_request() got an unexpected keyword argument 'timeout'
+2025-04-05 11:54:53 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 3/8
+2025-04-05 11:54:53 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: RequestHandler.send_request() got an unexpected keyword argument 'timeout'
+2025-04-05 11:54:53 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 4/8
+2025-04-05 11:54:53 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: RequestHandler.send_request() got an unexpected keyword argument 'timeout'
+2025-04-05 11:54:53 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 5/8
+2025-04-05 11:54:53 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: RequestHandler.send_request() got an unexpected keyword argument 'timeout'
+2025-04-05 11:54:53 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 6/8
+2025-04-05 11:54:53 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 7/8
+2025-04-05 11:54:53 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 8/8
+2025-04-05 11:54:53 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-05 11:54:53 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 8 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-05 11:57:59 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 8 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-05 11:57:59 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-05 11:57:59 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/8
+2025-04-05 11:57:59 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: RequestHandler.send_request() got an unexpected keyword argument 'timeout'
+2025-04-05 11:57:59 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 2/8
+2025-04-05 11:57:59 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: RequestHandler.send_request() got an unexpected keyword argument 'timeout'
+2025-04-05 11:57:59 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 3/8
+2025-04-05 11:57:59 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: RequestHandler.send_request() got an unexpected keyword argument 'timeout'
+2025-04-05 11:57:59 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 4/8
+2025-04-05 11:57:59 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: RequestHandler.send_request() got an unexpected keyword argument 'timeout'
+2025-04-05 11:57:59 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 5/8
+2025-04-05 11:57:59 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: RequestHandler.send_request() got an unexpected keyword argument 'timeout'
+2025-04-05 11:57:59 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 6/8
+2025-04-05 11:57:59 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 7/8
+2025-04-05 11:57:59 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 8/8
+2025-04-05 11:57:59 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-05 11:57:59 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 8 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-05 11:58:08 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 8 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-05 11:58:08 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-05 11:58:08 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/8
+2025-04-05 11:58:08 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: RequestHandler.send_request() got an unexpected keyword argument 'timeout'
+2025-04-05 11:58:08 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 2/8
+2025-04-05 11:58:08 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: RequestHandler.send_request() got an unexpected keyword argument 'timeout'
+2025-04-05 11:58:08 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 3/8
+2025-04-05 11:58:08 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: RequestHandler.send_request() got an unexpected keyword argument 'timeout'
+2025-04-05 11:58:08 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 4/8
+2025-04-05 11:58:08 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: RequestHandler.send_request() got an unexpected keyword argument 'timeout'
+2025-04-05 11:58:08 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 5/8
+2025-04-05 11:58:08 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: RequestHandler.send_request() got an unexpected keyword argument 'timeout'
+2025-04-05 11:58:08 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 6/8
+2025-04-05 11:58:08 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 7/8
+2025-04-05 11:58:08 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 8/8
+2025-04-05 11:58:08 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-05 11:58:08 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 8 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-05 11:59:11 - LLMFuzzer.UnboundedConsumption - ERROR - Failed to load payloads: [Errno 2] No such file or directory: '/data/unbounded_consumption_payloads.txt'
+2025-04-05 11:59:11 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-05 11:59:11 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-05 11:59:11 - LLMFuzzer.UnboundedConsumption - ERROR - Failed to load payloads: [Errno 2] No such file or directory: '/data/unbounded_consumption_payloads.txt'
+2025-04-05 11:59:56 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 8 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-05 11:59:56 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-05 11:59:56 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/8
+2025-04-05 11:59:56 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: RequestHandler.send_request() got an unexpected keyword argument 'timeout'
+2025-04-05 11:59:56 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 2/8
+2025-04-05 11:59:56 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: RequestHandler.send_request() got an unexpected keyword argument 'timeout'
+2025-04-05 11:59:56 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 3/8
+2025-04-05 11:59:56 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: RequestHandler.send_request() got an unexpected keyword argument 'timeout'
+2025-04-05 11:59:56 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 4/8
+2025-04-05 11:59:56 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: RequestHandler.send_request() got an unexpected keyword argument 'timeout'
+2025-04-05 11:59:56 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 5/8
+2025-04-05 11:59:56 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: RequestHandler.send_request() got an unexpected keyword argument 'timeout'
+2025-04-05 11:59:56 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 6/8
+2025-04-05 12:00:13 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 7/8
+2025-04-05 12:00:13 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 8/8
+2025-04-05 12:00:13 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-05 12:00:13 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 8 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-05 12:09:45 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 8 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-05 12:09:45 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-05 12:09:45 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/8
+2025-04-05 12:09:46 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'str' object has no attribute 'get'
+2025-04-05 12:09:46 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 2/8
+2025-04-05 12:09:46 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'str' object has no attribute 'get'
+2025-04-05 12:09:46 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 3/8
+2025-04-05 12:09:47 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'str' object has no attribute 'get'
+2025-04-05 12:09:47 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 4/8
+2025-04-05 12:09:48 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'str' object has no attribute 'get'
+2025-04-05 12:09:48 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 5/8
+2025-04-05 12:09:49 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'str' object has no attribute 'get'
+2025-04-05 12:09:49 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 6/8
+2025-04-05 12:10:04 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 7/8
+2025-04-05 12:10:04 - LLMFuzzer.UnboundedConsumption - WARNING - Response is not valid JSON, using full response
+2025-04-05 12:10:04 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 8/8
+2025-04-05 12:10:07 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-05 12:10:07 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 8 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-05 12:12:31 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 8 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-05 12:12:31 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-05 12:12:31 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/8
+2025-04-05 12:12:32 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'str' object has no attribute 'get'
+2025-04-05 12:12:32 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 2/8
+2025-04-05 12:12:34 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'str' object has no attribute 'get'
+2025-04-05 12:12:34 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 3/8
+2025-04-05 12:12:35 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'str' object has no attribute 'get'
+2025-04-05 12:12:35 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 4/8
+2025-04-05 12:12:41 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'str' object has no attribute 'get'
+2025-04-05 12:12:41 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 5/8
+2025-04-05 12:12:43 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'str' object has no attribute 'get'
+2025-04-05 12:12:43 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 6/8
+2025-04-05 12:12:57 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 7/8
+2025-04-05 12:12:57 - LLMFuzzer.UnboundedConsumption - WARNING - Response is not valid JSON, using full response
+2025-04-05 12:12:57 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 8/8
+2025-04-05 12:13:00 - LLMFuzzer.UnboundedConsumption - WARNING - Response is not valid JSON, using full response
+2025-04-05 12:13:00 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-05 12:13:00 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 8 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-05 12:14:10 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 6 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-05 12:14:10 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-05 12:14:10 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/6
+2025-04-05 12:14:11 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'str' object has no attribute 'get'
+2025-04-05 12:14:11 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 2/6
+2025-04-05 12:14:15 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'str' object has no attribute 'get'
+2025-04-05 12:14:15 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 3/6
+2025-04-05 12:14:23 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'str' object has no attribute 'get'
+2025-04-05 12:14:23 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 4/6
+2025-04-05 12:14:24 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'str' object has no attribute 'get'
+2025-04-05 12:14:24 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 5/6
+2025-04-05 12:14:26 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'str' object has no attribute 'get'
+2025-04-05 12:14:26 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 6/6
+2025-04-05 12:14:47 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-05 12:14:47 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 6 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-05 12:15:19 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 6 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-05 12:15:19 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-05 12:15:19 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/6
+2025-04-05 12:15:19 - LLMFuzzer.UnboundedConsumption - WARNING - Unknown payload type: resourceee, defaulting to resource-intensive test
+2025-04-05 12:15:19 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: RequestHandler.send_request() got an unexpected keyword argument 'timeout'
+2025-04-05 12:15:19 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 2/6
+2025-04-05 12:15:19 - LLMFuzzer.UnboundedConsumption - WARNING - Unknown payload type: resourceee, defaulting to resource-intensive test
+2025-04-05 12:15:19 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: RequestHandler.send_request() got an unexpected keyword argument 'timeout'
+2025-04-05 12:15:19 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 3/6
+2025-04-05 12:15:19 - LLMFuzzer.UnboundedConsumption - WARNING - Unknown payload type: resourceee, defaulting to resource-intensive test
+2025-04-05 12:15:19 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: RequestHandler.send_request() got an unexpected keyword argument 'timeout'
+2025-04-05 12:15:19 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 4/6
+2025-04-05 12:15:19 - LLMFuzzer.UnboundedConsumption - WARNING - Unknown payload type: resourceee, defaulting to resource-intensive test
+2025-04-05 12:15:19 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: RequestHandler.send_request() got an unexpected keyword argument 'timeout'
+2025-04-05 12:15:19 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 5/6
+2025-04-05 12:15:19 - LLMFuzzer.UnboundedConsumption - WARNING - Unknown payload type: resourceee, defaulting to resource-intensive test
+2025-04-05 12:15:19 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: RequestHandler.send_request() got an unexpected keyword argument 'timeout'
+2025-04-05 12:15:19 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 6/6
+2025-04-05 12:15:36 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-05 12:15:36 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 6 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-05 12:16:00 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 6 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-05 12:16:00 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-05 12:16:00 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/6
+2025-04-05 12:16:00 - LLMFuzzer.UnboundedConsumption - WARNING - Unknown payload type: resourceee, defaulting to resource-intensive test
+2025-04-05 12:16:01 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'str' object has no attribute 'get'
+2025-04-05 12:16:01 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 2/6
+2025-04-05 12:16:01 - LLMFuzzer.UnboundedConsumption - WARNING - Unknown payload type: resourceee, defaulting to resource-intensive test
+2025-04-05 12:16:02 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'str' object has no attribute 'get'
+2025-04-05 12:16:02 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 3/6
+2025-04-05 12:16:02 - LLMFuzzer.UnboundedConsumption - WARNING - Unknown payload type: resourceee, defaulting to resource-intensive test
+2025-04-05 12:16:04 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'str' object has no attribute 'get'
+2025-04-05 12:16:04 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 4/6
+2025-04-05 12:16:04 - LLMFuzzer.UnboundedConsumption - WARNING - Unknown payload type: resourceee, defaulting to resource-intensive test
+2025-04-05 12:16:05 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'str' object has no attribute 'get'
+2025-04-05 12:16:05 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 5/6
+2025-04-05 12:16:05 - LLMFuzzer.UnboundedConsumption - WARNING - Unknown payload type: resourceee, defaulting to resource-intensive test
+2025-04-05 12:16:06 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'str' object has no attribute 'get'
+2025-04-05 12:16:06 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 6/6
+2025-04-05 12:16:20 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-05 12:16:20 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 6 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-05 12:19:00 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 6 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-05 12:19:00 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-05 12:19:00 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/6
+2025-04-05 12:19:00 - LLMFuzzer.UnboundedConsumption - WARNING - Unknown payload type: resourceee, defaulting to resource-intensive test
+2025-04-05 12:19:01 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'str' object has no attribute 'get'
+2025-04-05 12:19:01 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 2/6
+2025-04-05 12:19:01 - LLMFuzzer.UnboundedConsumption - WARNING - Unknown payload type: resourceee, defaulting to resource-intensive test
+2025-04-05 12:19:02 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'str' object has no attribute 'get'
+2025-04-05 12:19:02 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 3/6
+2025-04-05 12:19:02 - LLMFuzzer.UnboundedConsumption - WARNING - Unknown payload type: resourceee, defaulting to resource-intensive test
+2025-04-05 12:19:10 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'str' object has no attribute 'get'
+2025-04-05 12:19:10 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 4/6
+2025-04-05 12:19:10 - LLMFuzzer.UnboundedConsumption - WARNING - Unknown payload type: resourceee, defaulting to resource-intensive test
+2025-04-05 12:19:13 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'str' object has no attribute 'get'
+2025-04-05 12:19:13 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 5/6
+2025-04-05 12:19:13 - LLMFuzzer.UnboundedConsumption - WARNING - Unknown payload type: resourceee, defaulting to resource-intensive test
+2025-04-05 12:19:14 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'str' object has no attribute 'get'
+2025-04-05 12:19:14 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 6/6
+2025-04-05 12:19:32 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-05 12:19:32 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 6 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-05 12:20:20 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-05 12:20:20 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-05 12:20:20 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/1
+2025-04-05 12:20:21 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'str' object has no attribute 'get'
+2025-04-05 12:20:21 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-05 12:20:21 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-05 12:21:27 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 3 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-05 12:21:27 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-05 12:21:27 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/3
+2025-04-05 12:21:28 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'str' object has no attribute 'get'
+2025-04-05 12:21:28 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 2/3
+2025-04-05 12:21:30 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'str' object has no attribute 'get'
+2025-04-05 12:21:30 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 3/3
+2025-04-05 12:21:31 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'str' object has no attribute 'get'
+2025-04-05 12:21:31 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-05 12:21:31 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 3 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-05 12:24:24 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 3 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-05 12:24:24 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-05 12:24:24 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/3
+2025-04-05 12:24:24 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'str' object has no attribute 'get'
+2025-04-05 12:24:24 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 2/3
+2025-04-05 12:24:26 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'str' object has no attribute 'get'
+2025-04-05 12:24:26 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 3/3
+2025-04-05 12:24:30 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'str' object has no attribute 'get'
+2025-04-05 12:24:30 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-05 12:24:30 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 3 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-05 12:28:15 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 3 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-05 12:28:15 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-05 12:28:15 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/3
+2025-04-05 12:28:16 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 2/3
+2025-04-05 12:28:18 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 3/3
+2025-04-05 12:28:20 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-05 12:28:20 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 3 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-05 12:30:26 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 3 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-05 12:30:26 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-05 12:30:26 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/3
+2025-04-05 12:30:27 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 2/3
+2025-04-05 12:30:28 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 3/3
+2025-04-05 12:30:29 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-05 12:30:29 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 3 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-05 12:35:18 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 3 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-05 12:35:18 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-05 12:35:18 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/3
+2025-04-05 12:35:19 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 2/3
+2025-04-05 12:35:21 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 3/3
+2025-04-05 12:35:22 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-05 12:35:22 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 3 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 13:31:57 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 3 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 13:31:57 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-06 13:31:57 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/3
+2025-04-06 13:31:57 - LLMFuzzer.UnboundedConsumption - WARNING - Response is not valid JSON, using full response
+2025-04-06 13:31:57 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 2/3
+2025-04-06 13:31:57 - LLMFuzzer.UnboundedConsumption - WARNING - Response is not valid JSON, using full response
+2025-04-06 13:31:57 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 3/3
+2025-04-06 13:31:57 - LLMFuzzer.UnboundedConsumption - WARNING - Response is not valid JSON, using full response
+2025-04-06 13:31:57 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-06 13:31:57 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 3 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 13:32:46 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 3 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 13:32:46 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-06 13:32:46 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/3
+2025-04-06 13:32:48 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 2/3
+2025-04-06 13:32:48 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 3/3
+2025-04-06 13:32:49 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-06 13:32:49 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 3 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 13:33:19 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 3 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 13:33:19 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-06 13:33:19 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/3
+2025-04-06 13:33:21 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 2/3
+2025-04-06 13:33:23 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 3/3
+2025-04-06 13:33:23 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-06 13:33:23 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 3 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 13:34:38 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 4 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 13:34:38 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-06 13:34:38 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/4
+2025-04-06 13:34:38 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 2/4
+2025-04-06 13:34:39 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 3/4
+2025-04-06 13:34:40 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 4/4
+2025-04-06 13:35:49 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-06 13:35:49 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 4 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 13:42:57 - LLMFuzzer - ERROR - Fuzzing failed: run_fuzzer() got an unexpected keyword argument 'max_token_threshold'. Did you mean 'maximum_token_threshold'?
+2025-04-06 13:43:34 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 4 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 13:43:34 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-06 13:43:34 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/4
+2025-04-06 13:43:35 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 2/4
+2025-04-06 13:43:36 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 3/4
+2025-04-06 13:43:37 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 4/4
+2025-04-06 13:43:52 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-06 13:43:52 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 4 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 13:45:12 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 3 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 13:45:12 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-06 13:45:12 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/3
+2025-04-06 13:45:13 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: '>' not supported between instances of 'int' and 'NoneType'
+2025-04-06 13:45:13 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 2/3
+2025-04-06 13:45:18 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: '>' not supported between instances of 'int' and 'NoneType'
+2025-04-06 13:45:18 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 3/3
+2025-04-06 13:45:19 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: '>' not supported between instances of 'int' and 'NoneType'
+2025-04-06 13:45:19 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-06 13:45:19 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 3 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 13:48:22 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 3 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 13:48:22 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-06 13:48:22 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/3
+2025-04-06 13:48:52 - LLMFuzzer.UnboundedConsumption - WARNING - Response is not valid JSON, using full response
+2025-04-06 13:48:52 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 2/3
+2025-04-06 13:49:22 - LLMFuzzer.UnboundedConsumption - WARNING - Response is not valid JSON, using full response
+2025-04-06 13:49:22 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 3/3
+2025-04-06 13:49:41 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 3 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 13:49:41 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-06 13:49:41 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/3
+2025-04-06 13:49:49 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 3 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 13:49:49 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-06 13:49:49 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/3
+2025-04-06 13:50:26 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 3 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 13:50:26 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-06 13:50:26 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/3
+2025-04-06 13:50:30 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: '>' not supported between instances of 'int' and 'NoneType'
+2025-04-06 13:50:30 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 2/3
+2025-04-06 13:50:31 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: '>' not supported between instances of 'int' and 'NoneType'
+2025-04-06 13:50:31 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 3/3
+2025-04-06 13:51:01 - LLMFuzzer.UnboundedConsumption - WARNING - Response is not valid JSON, using full response
+2025-04-06 13:51:01 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: '>' not supported between instances of 'int' and 'NoneType'
+2025-04-06 13:51:01 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-06 13:51:01 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 3 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 13:51:10 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 3 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 13:51:10 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-06 13:51:10 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/3
+2025-04-06 13:51:40 - LLMFuzzer.UnboundedConsumption - WARNING - Response is not valid JSON, using full response
+2025-04-06 13:51:40 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 2/3
+2025-04-06 13:55:42 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 3 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 13:55:42 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-06 13:55:42 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/3
+2025-04-06 13:55:43 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 2/3
+2025-04-06 13:55:45 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 3/3
+2025-04-06 13:55:51 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-06 13:55:51 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 3 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 14:17:28 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 14:17:28 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-06 14:17:28 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/1
+2025-04-06 14:17:28 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'NoneType' object cannot be interpreted as an integer
+2025-04-06 14:17:28 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-06 14:17:28 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 14:17:30 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 14:17:30 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-06 14:17:30 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/1
+2025-04-06 14:17:30 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'NoneType' object cannot be interpreted as an integer
+2025-04-06 14:17:30 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-06 14:17:30 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 14:17:48 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 14:17:48 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-06 14:17:48 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/1
+2025-04-06 14:17:48 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'NoneType' object cannot be interpreted as an integer
+2025-04-06 14:17:48 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-06 14:17:48 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 14:17:54 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 14:17:54 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-06 14:17:54 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/1
+2025-04-06 14:17:54 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'NoneType' object cannot be interpreted as an integer
+2025-04-06 14:17:54 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-06 14:17:54 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 14:19:00 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 14:19:00 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-06 14:19:00 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/1
+2025-04-06 14:19:00 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'NoneType' object cannot be interpreted as an integer
+2025-04-06 14:19:00 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-06 14:19:00 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 14:19:07 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 14:19:07 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-06 14:19:07 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/1
+2025-04-06 14:19:07 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'NoneType' object cannot be interpreted as an integer
+2025-04-06 14:19:07 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-06 14:19:07 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 14:19:13 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 14:19:13 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-06 14:19:13 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/1
+2025-04-06 14:19:13 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'NoneType' object cannot be interpreted as an integer
+2025-04-06 14:19:13 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-06 14:19:13 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 14:20:48 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 14:20:48 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-06 14:20:48 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/1
+2025-04-06 14:20:48 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'NoneType' object cannot be interpreted as an integer
+2025-04-06 14:20:48 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-06 14:20:48 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 14:21:20 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 14:21:20 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-06 14:21:20 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/1
+2025-04-06 14:21:20 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'NoneType' object cannot be interpreted as an integer
+2025-04-06 14:21:20 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-06 14:21:20 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 14:21:29 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 14:21:29 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-06 14:21:29 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/1
+2025-04-06 14:21:29 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'NoneType' object cannot be interpreted as an integer
+2025-04-06 14:21:29 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-06 14:21:29 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 14:21:51 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 2 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 14:21:51 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-06 14:21:51 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/2
+2025-04-06 14:21:53 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: '>' not supported between instances of 'int' and 'NoneType'
+2025-04-06 14:21:53 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 2/2
+2025-04-06 14:21:53 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'NoneType' object cannot be interpreted as an integer
+2025-04-06 14:21:53 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-06 14:21:53 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 2 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 14:25:24 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 2 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 14:25:24 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-06 14:25:24 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/2
+2025-04-06 14:25:25 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: '>' not supported between instances of 'int' and 'NoneType'
+2025-04-06 14:25:25 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 2/2
+2025-04-06 14:25:25 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'NoneType' object cannot be interpreted as an integer
+2025-04-06 14:25:25 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-06 14:25:25 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 2 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 14:26:23 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 2 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 14:26:23 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-06 14:26:23 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/2
+2025-04-06 14:26:24 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: '>' not supported between instances of 'int' and 'NoneType'
+2025-04-06 14:26:24 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 2/2
+2025-04-06 14:26:24 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'NoneType' object cannot be interpreted as an integer
+2025-04-06 14:26:24 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-06 14:26:24 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 2 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 14:28:41 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 2 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 14:28:41 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-06 14:28:41 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/2
+2025-04-06 14:28:43 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: '>' not supported between instances of 'int' and 'NoneType'
+2025-04-06 14:28:43 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 2/2
+2025-04-06 14:28:43 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'AnsiStyle' object has no attribute 'RED'
+2025-04-06 14:28:43 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-06 14:28:43 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 2 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 14:30:17 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 2 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 14:30:17 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-06 14:30:17 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/2
+2025-04-06 14:30:20 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: '>' not supported between instances of 'int' and 'NoneType'
+2025-04-06 14:30:20 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 2/2
+2025-04-06 14:30:20 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'NoneType' object cannot be interpreted as an integer
+2025-04-06 14:30:20 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-06 14:30:20 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 2 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 14:30:46 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 14:30:46 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-06 14:30:46 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/1
+2025-04-06 14:30:46 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'NoneType' object cannot be interpreted as an integer
+2025-04-06 14:30:46 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-06 14:30:46 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 14:32:14 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 14:32:14 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-06 14:32:14 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/1
+2025-04-06 14:32:14 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'NoneType' object cannot be interpreted as an integer
+2025-04-06 14:32:14 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-06 14:32:14 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 14:32:39 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 14:32:39 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-06 14:32:39 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/1
+2025-04-06 14:32:39 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'NoneType' object cannot be interpreted as an integer
+2025-04-06 14:32:39 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-06 14:32:39 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 14:33:42 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 14:33:42 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-06 14:33:42 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/1
+2025-04-06 14:33:42 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'NoneType' object cannot be interpreted as an integer
+2025-04-06 14:33:42 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-06 14:33:42 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 14:34:05 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 14:34:05 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-06 14:34:05 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/1
+2025-04-06 14:34:05 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'NoneType' object cannot be interpreted as an integer
+2025-04-06 14:34:05 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-06 14:34:05 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 14:39:30 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 14:39:30 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-06 14:39:30 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/1
+2025-04-06 14:39:41 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 14:39:41 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-06 14:39:41 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/1
+2025-04-06 14:48:24 - LLMFuzzer - ERROR - Fuzzing failed: run_fuzzer() missing 2 required positional arguments: 'rate_limit_test_count' and 'rate_limit_interval'
+2025-04-06 14:51:41 - LLMFuzzer - ERROR - Fuzzing failed: UnboundedConsumptionFuzzer.__init__() missing 1 required positional argument: 'payload_file'
+2025-04-06 14:52:51 - LLMFuzzer - ERROR - Fuzzing failed: UnboundedConsumptionFuzzer.__init__() missing 1 required positional argument: 'payload_file'
+2025-04-06 14:54:03 - LLMFuzzer - ERROR - Fuzzing failed: UnboundedConsumptionFuzzer.__init__() missing 1 required positional argument: 'payload_file'
+2025-04-06 14:57:09 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 14:57:09 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-06 14:57:09 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/1
+2025-04-06 14:58:41 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-06 14:58:41 - LLMFuzzer - ERROR - Fuzzing failed: UnboundedConsumptionFuzzer.__init__() missing 1 required positional argument: 'payload_file'
+2025-04-06 15:01:22 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 15:01:22 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-06 15:01:22 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/1
+2025-04-06 15:01:27 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-06 15:01:27 - LLMFuzzer - ERROR - Fuzzing failed: UnboundedConsumptionFuzzer.__init__() missing 1 required positional argument: 'payload_file'
+2025-04-06 15:02:47 - LLMFuzzer - ERROR - Fuzzing failed: UnboundedConsumptionFuzzer.__init__() missing 1 required positional argument: 'payload_file'
+2025-04-06 15:03:21 - LLMFuzzer - ERROR - Fuzzing failed: UnboundedConsumptionFuzzer.__init__() missing 1 required positional argument: 'payload_file'
+2025-04-06 15:03:52 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 15:03:52 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-06 15:03:52 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/1
+2025-04-06 15:04:09 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-06 15:04:09 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 15:04:17 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 15:04:17 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-06 15:04:17 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/1
+2025-04-06 15:04:17 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'NoneType' object cannot be interpreted as an integer
+2025-04-06 15:04:17 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-06 15:04:17 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 15:04:19 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 15:04:19 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-06 15:04:19 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/1
+2025-04-06 15:04:19 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'NoneType' object cannot be interpreted as an integer
+2025-04-06 15:04:19 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-06 15:04:19 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 15:05:33 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 15:05:33 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-06 15:05:33 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/1
+2025-04-06 15:05:33 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'NoneType' object cannot be interpreted as an integer
+2025-04-06 15:05:33 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-06 15:05:33 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 15:06:38 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 15:06:38 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-06 15:06:38 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/1
+2025-04-06 15:06:38 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'NoneType' object cannot be interpreted as an integer
+2025-04-06 15:06:38 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-06 15:06:38 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 15:10:10 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 15:10:10 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-06 15:10:10 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/1
+2025-04-06 15:10:10 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'NoneType' object cannot be interpreted as an integer
+2025-04-06 15:10:10 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-06 15:10:10 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 15:10:33 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 15:10:33 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-06 15:10:33 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/1
+2025-04-06 15:10:33 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'NoneType' object cannot be interpreted as an integer
+2025-04-06 15:10:33 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-06 15:10:33 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 15:11:18 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 15:11:18 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-06 15:11:18 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/1
+2025-04-06 15:11:18 - LLMFuzzer.UnboundedConsumption - ERROR - Error processing payload: 'NoneType' object cannot be interpreted as an integer
+2025-04-06 15:11:18 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-06 15:11:18 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 15:22:09 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 15:22:09 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-06 15:22:09 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/1
+2025-04-06 15:22:33 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 15:22:33 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-06 15:22:33 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/1
+2025-04-06 15:23:32 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 15:23:32 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-06 15:23:32 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/1
+2025-04-06 15:28:39 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 15:28:39 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-06 15:28:39 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/1
+2025-04-06 15:28:44 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-06 15:28:44 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 15:28:55 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 15:28:55 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-06 15:28:55 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/1
+2025-04-06 15:36:48 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 15:36:48 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-06 15:36:48 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/1
+2025-04-06 15:51:33 - LLMFuzzer - ERROR - Fuzzing failed: SystemPromptLeakageFuzzer.__init__() got an unexpected keyword argument 'max_token_threshold'
+2025-04-06 15:53:08 - LLMFuzzer - ERROR - Fuzzing failed: SystemPromptLeakageFuzzer.__init__() got an unexpected keyword argument 'rate_limit_test_count'
+2025-04-06 15:55:28 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-06 15:55:33 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 15:55:33 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-06 15:55:33 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/1
+2025-04-06 15:56:26 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 15:56:26 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-06 15:56:26 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/1
+2025-04-06 15:57:02 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 15:57:02 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-06 15:57:02 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/1
+2025-04-06 15:57:24 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 15:57:24 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-06 15:57:24 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/1
+2025-04-06 15:57:52 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 15:57:52 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-06 15:57:52 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/1
+2025-04-06 15:59:26 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 15:59:26 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-06 15:59:26 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/1
+2025-04-06 15:59:47 - LLMFuzzer - ERROR - Fuzzing failed: name 'UnboundedConsumption' is not defined
+2025-04-06 15:59:59 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 15:59:59 - LLMFuzzer - INFO - Starting fuzzing for unbounded_consumption vulnerability
+2025-04-06 15:59:59 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/1
+2025-04-06 16:00:08 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-06 16:00:08 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 1 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-06 16:00:54 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-06 16:01:09 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-06 16:04:39 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-06 16:06:05 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-06 16:11:21 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-06 16:13:28 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-06 16:14:00 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-06 16:28:00 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-07 05:22:09 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-07 05:22:50 - LLMFuzzer - INFO - Starting fuzzing for system_prompt_leakage vulnerability
+2025-04-07 05:22:55 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
