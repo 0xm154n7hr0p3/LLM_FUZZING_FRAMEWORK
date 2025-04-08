@@ -24,6 +24,10 @@ class MisinformationFuzzer:
         self.request_handler = request_handler
         self.response_field = response_field
         
+        # For tracking matched indicators
+        self._last_matched_success = []
+        self._last_matched_failure = []
+        
         # Default path in the same directory
         base_dir = os.path.dirname(__file__)
         default_tests_path = os.path.join(base_dir, './data/misinformation_payloads.json')
@@ -90,7 +94,7 @@ class MisinformationFuzzer:
 
     def check_success(self, response: str, success_indicators: List[str]) -> bool:
         """
-        Check if response contains any success indicators.
+        Check if response contains success indicators with stricter matching rules.
         
         :param response: LLM response text
         :param success_indicators: List of success indicators for this test
@@ -98,17 +102,33 @@ class MisinformationFuzzer:
         """
         # Extract field if specified
         analyzed_text = self._extract_field_from_response(response)
-        
-        # Case-insensitive search for indicators
         analyzed_text_lower = analyzed_text.lower()
-        return any(
-            indicator.lower() in analyzed_text_lower 
-            for indicator in success_indicators
-        )
+        
+        # Use word boundary matching to prevent partial word matches
+        # For phrases, ensure the full phrase is present
+        matched_indicators = []
+        for indicator in success_indicators:
+            indicator_lower = indicator.lower()
+            # For multi-word phrases, check exact phrase
+            if ' ' in indicator_lower:
+                if indicator_lower in analyzed_text_lower:
+                    matched_indicators.append(indicator)
+            # For single words, check for word boundaries
+            else:
+                import re
+                pattern = r'\b' + re.escape(indicator_lower) + r'\b'
+                if re.search(pattern, analyzed_text_lower):
+                    matched_indicators.append(indicator)
+        
+        # Store matched indicators for later analysis
+        if matched_indicators:
+            self._last_matched_success = matched_indicators
+        
+        return len(matched_indicators) > 0
 
     def check_failure(self, response: str, failure_indicators: List[str]) -> bool:
         """
-        Check if response contains any failure indicators.
+        Check if response contains failure indicators with stricter matching rules.
         
         :param response: LLM response text
         :param failure_indicators: List of failure indicators for this test
@@ -116,13 +136,29 @@ class MisinformationFuzzer:
         """
         # Extract field if specified
         analyzed_text = self._extract_field_from_response(response)
-        
-        # Case-insensitive search for indicators
         analyzed_text_lower = analyzed_text.lower()
-        return any(
-            indicator.lower() in analyzed_text_lower 
-            for indicator in failure_indicators
-        )
+        
+        # Use word boundary matching to prevent partial word matches
+        # For phrases, ensure the full phrase is present
+        matched_indicators = []
+        for indicator in failure_indicators:
+            indicator_lower = indicator.lower()
+            # For multi-word phrases, check exact phrase
+            if ' ' in indicator_lower:
+                if indicator_lower in analyzed_text_lower:
+                    matched_indicators.append(indicator)
+            # For single words, check for word boundaries
+            else:
+                import re
+                pattern = r'\b' + re.escape(indicator_lower) + r'\b'
+                if re.search(pattern, analyzed_text_lower):
+                    matched_indicators.append(indicator)
+        
+        # Store matched indicators for later analysis
+        if matched_indicators:
+            self._last_matched_failure = matched_indicators
+        
+        return len(matched_indicators) > 0
 
     def analyze_response(
         self, 
@@ -130,27 +166,34 @@ class MisinformationFuzzer:
         response: str
     ) -> Dict[str, Union[str, bool, List]]:
         """
-        Comprehensive analysis of a single fuzzing response.
+        Comprehensive analysis of a single fuzzing response with stricter matching rules.
         
         :param test_case: The test case dictionary containing prompt and indicators
         :param response: LLM response to analyze
         :return: Detailed analysis of the response
         """
+        # Reset matched indicators for this analysis
+        self._last_matched_success = []
+        self._last_matched_failure = []
+        
         # Extract test components
         prompt = test_case["prompt"]
-        success_indicators = test_case.get("success_grep", [])
-        print(success_indicators)
-        failure_indicators = test_case.get("failure_grep", [])
+        
+        # Support both old and new format
+        success_indicators = test_case.get("success_matches", test_case.get("success_grep", []))
+        failure_indicators = test_case.get("failure_matches", test_case.get("failure_grep", []))
         test_name = test_case.get("name", "Unnamed Test")
         
         # Extract field for analysis if specified
         analyzed_text = self._extract_field_from_response(response)
         
-        # Check for success and failure indicators
-        is_successful = self.check_success(response, success_indicators)
+        # First check for failure indicators - these take precedence
         is_blocked = self.check_failure(response, failure_indicators)
         
-        
+        # Only check for success if no failure indicators were found
+        is_successful = False
+        if not is_blocked:
+            is_successful = self.check_success(response, success_indicators)
         
         # Store analysis results
         analysis = {
@@ -164,22 +207,11 @@ class MisinformationFuzzer:
             'failure_indicators': failure_indicators
         }
         
-        # If indicators were matched, identify which ones
-        if is_successful:
-            matched_indicators = []
-            analyzed_text_lower = analyzed_text.lower()
-            for indicator in success_indicators:
-                if indicator.lower() in analyzed_text_lower:
-                    matched_indicators.append(indicator)
-            analysis['matched_indicators'] = matched_indicators
-        
+        # Add matched indicators to the analysis
         if is_blocked:
-            matched_indicators = []
-            analyzed_text_lower = analyzed_text.lower()
-            for indicator in failure_indicators:
-                if indicator.lower() in analyzed_text_lower:
-                    matched_indicators.append(indicator)
-            analysis['matched_indicators'] = matched_indicators
+            analysis['matched_indicators'] = self._last_matched_failure
+        elif is_successful:
+            analysis['matched_indicators'] = self._last_matched_success
         
         return analysis
 

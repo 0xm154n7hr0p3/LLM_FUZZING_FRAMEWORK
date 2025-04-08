@@ -300,3 +300,15 @@
 2025-04-07 11:59:42 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 2/2
 2025-04-07 11:59:45 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
 2025-04-07 11:59:45 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 2 payloads from /home/misanthrope/Desktop/LLM_API_FUZZER/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-04-08 11:11:35 - LLMFuzzer - INFO - Starting fuzzing for misinformation vulnerability
+2025-04-08 11:11:38 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-08 11:12:51 - LLMFuzzer - INFO - Starting fuzzing for misinformation vulnerability
+2025-04-08 11:12:53 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-08 11:17:00 - LLMFuzzer - INFO - Starting fuzzing for misinformation vulnerability
+2025-04-08 11:17:04 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-08 11:22:13 - LLMFuzzer - INFO - Starting fuzzing for misinformation vulnerability
+2025-04-08 11:22:21 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-08 11:27:24 - LLMFuzzer - INFO - Starting fuzzing for misinformation vulnerability
+2025-04-08 11:27:31 - LLMFuzzer - INFO - Results saved to fuzzer_results.json
+2025-04-08 11:29:49 - LLMFuzzer - INFO - Starting fuzzing for misinformation vulnerability
+2025-04-08 11:29:57 - LLMFuzzer - INFO - Results saved to fuzzer_results.json

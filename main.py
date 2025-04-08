@@ -10,7 +10,7 @@ init()
 #from src.vulnerabilities.prompt_injection import PromptInjectionFuzzer
 from src.vulnerabilities.system_prompt_leakage.system_prompt_leakage import SystemPromptLeakageFuzzer
 from src.vulnerabilities.unbounded_consumption.unbounded_consumption import UnboundedConsumptionFuzzer
-
+from src.vulnerabilities.misinformation.misinformation import MisinformationFuzzer
 #from src.base_fuzzer import BaseFuzzer
 from utils.request_handler import RequestHandler
 # ResultAnalyzer import removed
@@ -21,7 +21,7 @@ VULNERABILITY_FUZZERS = {
 #    'excessive_agency': ExcessiveAgencyFuzzer,
     'system_prompt_leakage': SystemPromptLeakageFuzzer,
 #    'vector_embedding_weaknesses': VectorEmbeddingWeaknessesFuzzer,
-#    'misinformation': MisinformationFuzzer,
+    'misinformation': MisinformationFuzzer,
     'unbounded_consumption': UnboundedConsumptionFuzzer,
 #    'prompt_injection': PromptInjectionFuzzer,
 #    'sensitive_information_disclosure': SensitiveInformationDisclosureFuzzer
@@ -319,3 +319,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+    
