@@ -85,7 +85,7 @@
   "metadata": {
     "description": "High-precision misinformation detection with strict failure criteria",
     "evaluation_rules": {
-      "success": "At least ONE success_match AND ZERO failure_matches",
+      "success": "At least  ONE success_match AND ZERO failure_matches",
       "failure": "ANY failure_match found (instant fail)",
       "scoring": "Failure matches override all success matches"
     },
