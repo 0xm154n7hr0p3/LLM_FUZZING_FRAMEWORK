@@ -1,262 +1,444 @@
 import os
 import datetime
 import json
-import re
 from typing import Dict, List, Optional, Union, Any
 from colorama import Fore, Back, Style
 
 class MisinformationFuzzer:
     def __init__(
         self, 
-        model_endpoint: str, 
-        request_handler: Any, 
-        tests_file: Optional[str] = None,
-        response_field: Optional[str] = None,
-        strict_mode: bool = True
+        model_endpoint, 
+        request_handler, 
+        tests_file=None,
+        response_field=None
     ):
         """
-        Enhanced Misinformation Fuzzer with improved analysis capabilities
+        Initialize Misinformation Fuzzer with integrated analysis capabilities
         
-        Args:
-            model_endpoint: LLM API endpoint
-            request_handler: Request handling utility
-            tests_file: Path to JSON file containing test cases
-            response_field: JSON field to extract from response for analysis
-            strict_mode: If True, any failure match overrides success matches
+        :param model_endpoint: LLM API endpoint
+        :param request_handler: Request handling utility
+        :param tests_file: Path to JSON file containing test cases
+        :param response_field: JSON field to extract from response for analysis (e.g. "message")
         """
         self.model_endpoint = model_endpoint
         self.request_handler = request_handler
         self.response_field = response_field
-        self.strict_mode = strict_mode
         
-        # Load test cases with improved path handling
-        self.tests = self._load_tests(tests_file or self._get_default_tests_path())
+        # Default path in the same directory
+        base_dir = os.path.dirname(__file__)
+        default_tests_path = os.path.join(base_dir, './data/misinformation_payloads.json')
+        print(default_tests_path)
         
-        # Pre-compile regex patterns for performance
-        self._compiled_patterns = {}
-
-    def _get_default_tests_path(self) -> str:
-        """Get default path to test cases file"""
-        base_dir = os.path.dirname(os.path.abspath(__file__))
-        return os.path.join(base_dir, 'data', 'misinformation_payloads.json')
-
+        # Load test cases
+        self.tests = self._load_tests(tests_file or default_tests_path)
+    
     def _load_tests(self, file_path: str) -> List[Dict]:
         """
-        Improved test case loading with validation
+        Load test cases from a JSON file with error handling
         
-        Args:
-            file_path: Path to tests JSON file
-            
-        Returns:
-            List of validated test dictionaries
+        :param file_path: Path to tests JSON file
+        :return: List of test dictionaries
         """
         try:
-            with open(file_path, 'r', encoding='utf-8') as f:
+            with open(file_path, 'r') as f:
                 data = json.load(f)
-                
-            tests = data.get("tests", [])
-            return self._validate_tests(tests)
-            
+                # Return the list of tests from the JSON structure
+                return data.get("tests", [])
         except FileNotFoundError:
-            raise FileNotFoundError(f"Tests file not found: {file_path}")
+            print(f"Tests file not found: {file_path}")
+            return []
         except json.JSONDecodeError as e:
-            raise ValueError(f"Invalid JSON in tests file: {e}")
+            print(f"Error parsing JSON in tests file: {e}")
+            return []
         except Exception as e:
-            raise RuntimeError(f"Error loading tests: {e}")
-
-    def _validate_tests(self, tests: List[Dict]) -> List[Dict]:
-        """Validate test case structure"""
-        required_fields = {'prompt', 'success_matches', 'failure_matches'}
-        validated = []
-        
-        for test in tests:
-            # Ensure required fields exist
-            if not all(field in test for field in required_fields):
-                print(f"Warning: Test missing required fields, skipping: {test.get('name', 'Unnamed')}")
-                continue
-                
-            # Convert legacy 'grep' fields to 'matches' if needed
-            if 'success_grep' in test:
-                test['success_matches'] = test.pop('success_grep')
-            if 'failure_grep' in test:
-                test['failure_matches'] = test.pop('failure_grep')
-                
-            validated.append(test)
-            
-        return validated
+            print(f"Error reading tests file: {e}")
+            return []
 
     def _extract_field_from_response(self, response: Any) -> str:
         """
-        Robust field extraction from response
+        Extract a specific field from JSON response if specified.
         
         Args:
             response: API response (could be string or dict)
             
         Returns:
-            Extracted field content or original response as string
+            Extracted field content or original response
         """
         if not self.response_field:
             return str(response)
             
         try:
-            # Handle both dict and JSON string responses
-            if isinstance(response, str):
-                response_data = json.loads(response)
+            # If response is already a dict, use it directly
+            if isinstance(response, dict):
+                response_json = response
             else:
-                response_data = response
-                
-            # Deep field extraction support (e.g., "result.message")
-            fields = self.response_field.split('.')
-            current = response_data
-            for field in fields:
-                current = current.get(field, {})
-                
-            return str(current) if current else str(response)
+                # Parse response as JSON
+                response_json = json.loads(response)
             
-        except (json.JSONDecodeError, AttributeError):
+            # Extract the specified field
+            if self.response_field in response_json:
+                return str(response_json[self.response_field])
+            else:
+                print(f"Warning: Field '{self.response_field}' not found in response")
+                return str(response)
+        except json.JSONDecodeError:
+            print(f"Warning: Response is not valid JSON, using full response")
+            return str(response)
+        except Exception as e:
+            print(f"Error extracting field: {e}")
             return str(response)
 
-    def _get_compiled_pattern(self, pattern: str) -> re.Pattern:
-        """Cache compiled regex patterns for performance"""
-        if pattern not in self._compiled_patterns:
-            self._compiled_patterns[pattern] = re.compile(
-                re.escape(pattern), 
-                re.IGNORECASE
-            )
-        return self._compiled_patterns[pattern]
+    def check_success(self, response: str, success_indicators: List[str]) -> bool:
+        """
+        Check if response contains any success indicators.
+        
+        :param response: LLM response text
+        :param success_indicators: List of success indicators for this test
+        :return: Whether vulnerability was successfully triggered
+        """
+        # Extract field if specified
+        analyzed_text = self._extract_field_from_response(response)
+        
+        # Case-insensitive search for indicators
+        analyzed_text_lower = analyzed_text.lower()
+        return any(
+            indicator.lower() in analyzed_text_lower 
+            for indicator in success_indicators
+        )
 
-    def _check_indicators(
-        self, 
-        text: str, 
-        indicators: List[str], 
-        require_all: bool = False
-    ) -> Union[bool, List[str]]:
+    def check_failure(self, response: str, failure_indicators: List[str]) -> bool:
         """
-        Enhanced indicator checking with regex support
+        Check if response contains any failure indicators.
         
-        Args:
-            text: Text to analyze
-            indicators: List of strings or regex patterns to match
-            require_all: If True, all indicators must match
-            
-        Returns:
-            bool or list of matches depending on mode
+        :param response: LLM response text
+        :param failure_indicators: List of failure indicators for this test
+        :return: Whether the attempt was blocked or failed
         """
-        text_lower = text.lower()
-        matches = []
+        # Extract field if specified
+        analyzed_text = self._extract_field_from_response(response)
         
-        for indicator in indicators:
-            try:
-                # Try regex match first
-                if indicator.startswith('regex:'):
-                    pattern = indicator[6:]
-                    if re.search(pattern, text, re.IGNORECASE):
-                        matches.append(indicator)
-                # Normal substring match
-                elif indicator.lower() in text_lower:
-                    matches.append(indicator)
-            except re.error:
-                # Fall back to simple string match if regex is invalid
-                if indicator.lower() in text_lower:
-                    matches.append(indicator)
-        
-        if require_all:
-            return len(matches) == len(indicators)
-        return matches if matches else False
+        # Case-insensitive search for indicators
+        analyzed_text_lower = analyzed_text.lower()
+        return any(
+            indicator.lower() in analyzed_text_lower 
+            for indicator in failure_indicators
+        )
 
     def analyze_response(
         self, 
         test_case: Dict,
-        response: Union[str, Dict]
-    ) -> Dict[str, Any]:
+        response: str
+    ) -> Dict[str, Union[str, bool, List]]:
         """
-        Comprehensive analysis of a fuzzing response with enhanced matching
+        Comprehensive analysis of a single fuzzing response.
         
-        Args:
-            test_case: Test case dictionary
-            response: LLM response to analyze
-            
-        Returns:
-            Detailed analysis dictionary
+        :param test_case: The test case dictionary containing prompt and indicators
+        :param response: LLM response to analyze
+        :return: Detailed analysis of the response
         """
-        # Extract test components with defaults
-        test_name = test_case.get('name', 'Unnamed Test')
-        prompt = test_case['prompt']
-        success_indicators = test_case.get('success_matches', [])
-        failure_indicators = test_case.get('failure_matches', [])
+        # Extract test components
+        prompt = test_case["prompt"]
+        success_indicators = test_case.get("success_grep", [])
+        print(success_indicators)
+        failure_indicators = test_case.get("failure_grep", [])
+        test_name = test_case.get("name", "Unnamed Test")
         
-        # Extract and analyze text
+        # Extract field for analysis if specified
         analyzed_text = self._extract_field_from_response(response)
         
-        # Check indicators (returns list of matches or False)
-        success_matches = self._check_indicators(analyzed_text, success_indicators)
-        failure_matches = self._check_indicators(analyzed_text, failure_indicators)
+        # Check for success and failure indicators
+        is_successful = self.check_success(response, success_indicators)
+        is_blocked = self.check_failure(response, failure_indicators)
         
-        # Determine test outcome
-        is_successful = bool(success_matches)
-        is_blocked = bool(failure_matches)
         
-        # Apply strict mode if enabled (any failure overrides success)
-        if self.strict_mode and is_blocked:
-            is_successful = False
         
-        # Build analysis result
+        # Store analysis results
         analysis = {
             'test_name': test_name,
             'prompt': prompt,
-            'analyzed_text': analyzed_text,
             'full_response': response,
+            'analyzed_text': analyzed_text,
             'is_successful': is_successful,
             'is_blocked': is_blocked,
             'success_indicators': success_indicators,
-            'failure_indicators': failure_indicators,
-            'timestamp': datetime.datetime.now().isoformat(),
-            'prompt_length': len(prompt),
-            'response_length': len(str(response))
+            'failure_indicators': failure_indicators
         }
         
-        # Add matched indicators if found
-        if success_matches:
-            analysis['success_matches'] = success_matches
-        if failure_matches:
-            analysis['failure_matches'] = failure_matches
-            
+        # If indicators were matched, identify which ones
+        if is_successful:
+            matched_indicators = []
+            analyzed_text_lower = analyzed_text.lower()
+            for indicator in success_indicators:
+                if indicator.lower() in analyzed_text_lower:
+                    matched_indicators.append(indicator)
+            analysis['matched_indicators'] = matched_indicators
+        
+        if is_blocked:
+            matched_indicators = []
+            analyzed_text_lower = analyzed_text.lower()
+            for indicator in failure_indicators:
+                if indicator.lower() in analyzed_text_lower:
+                    matched_indicators.append(indicator)
+            analysis['matched_indicators'] = matched_indicators
+        
         return analysis
 
-    # ... (rest of the class methods remain similar with minor improvements)
-
-    def display_results(self, results: Dict[str, Any]) -> None:
+    def aggregate_results(
+        self, 
+        individual_results: List[Dict]
+    ) -> Dict:
         """
-        Enhanced results display with better formatting and highlighting
+        Aggregate results from multiple fuzzing attempts.
         
-        Args:
-            results: Fuzzing results dictionary
+        :param individual_results: List of individual test results
+        :return: Categorized results
+        """
+        aggregated_results = {
+            'total_tests': len(individual_results),
+            'successful_exploits': [
+                result for result in individual_results 
+                if result['is_successful']
+            ],
+            'blocked_attempts': [
+                result for result in individual_results 
+                if result['is_blocked']
+            ],
+            'failed_attempts': [
+                result for result in individual_results 
+                if not result['is_successful'] and not result['is_blocked']
+            ]
+        }
+        
+        return aggregated_results
+    
+    def fuzz(self) -> Dict:
+        """
+        Perform comprehensive fuzzing for misinformation vulnerabilities
+        
+        :return: Detailed fuzzing results
+        """
+        # Prepare to collect individual test results
+        individual_results = []
+        
+        # Tracking metadata for the entire fuzzing session
+        fuzzing_metadata = {
+            'start_time': datetime.datetime.now().isoformat(),
+            'total_tests': len(self.tests),
+            'endpoint': self.model_endpoint
+        }
+        
+        # Run each test
+        for test_case in self.tests:
+            try:
+                # Extract prompt from test case
+                prompt = test_case["prompt"]
+                
+                # Send request with payload
+                response = self.request_handler.send_request(
+                    self.model_endpoint, 
+                    prompt
+                )
+                
+                # Analyze the response
+                result_entry = self.analyze_response(
+                    test_case=test_case,
+                    response=response
+                )
+                
+                # Add additional metadata to the result
+                result_entry.update({
+                    'timestamp': datetime.datetime.now().isoformat(),
+                    'prompt_length': len(prompt),
+                    'response_length': len(response)
+                })
+                
+                individual_results.append(result_entry)
+            
+            except Exception as e:
+                # Handle and log any errors during fuzzing
+                error_entry = {
+                    'test_name': test_case.get("name", "Unnamed Test"),
+                    'prompt': test_case.get("prompt", ""),
+                    'error': str(e),
+                    'timestamp': datetime.datetime.now().isoformat(),
+                    'is_successful': False,
+                    'is_blocked': False
+                }
+                individual_results.append(error_entry)
+        
+        # Use integrated aggregation
+        aggregated_results = self.aggregate_results(individual_results)
+        
+        # Add fuzzing metadata to the final results
+        aggregated_results['fuzzing_metadata'] = fuzzing_metadata
+        
+        # Perform additional analysis
+        aggregated_results['insights'] = self._generate_insights(aggregated_results)
+        
+        return aggregated_results
+    
+    def _generate_insights(self, results: Dict) -> Dict:
+        """
+        Generate additional insights from fuzzing results
+        
+        :param results: Aggregated fuzzing results
+        :return: Insights dictionary
+        """
+        total_tests = results.get('total_tests', 0)
+        
+        insights = {
+            'success_rate': len(results['successful_exploits']) / total_tests * 100 if total_tests > 0 else 0,
+            'block_rate': len(results['blocked_attempts']) / total_tests * 100 if total_tests > 0 else 0,
+            'most_revealing_tests': sorted(
+                results['successful_exploits'], 
+                key=lambda x: len(x.get('full_response', '')), 
+                reverse=True
+            )[:5] if results['successful_exploits'] else []  # Top 5 most revealing tests
+        }
+        
+        return insights
+
+    def display_results(self, results: Dict[str, Any], response_field: str = None) -> None:
+        """
+        Display fuzzing results with colored output and highlighting
+        
+        :param results: Fuzzing results dictionary
         """
         print("\n" + "="*80)
         print(f"{Fore.CYAN}MISINFORMATION FUZZING RESULTS{Style.RESET_ALL}")
         print("="*80)
         
-        # Calculate and display summary statistics
-        total = results.get('total_tests', 0)
-        successes = len(results.get('successful_exploits', []))
-        blocks = len(results.get('blocked_attempts', []))
-        
-        vuln_status = (f"{Fore.RED}VULNERABLE{Style.RESET_ALL}" if successes > 0 
-                      else f"{Fore.GREEN}SECURE{Style.RESET_ALL}")
-        
+        # Print colored summary to console
+        vuln_status = f"{Fore.RED}VULNERABLE{Style.RESET_ALL}" if results.get("successful_exploits") else f"{Fore.GREEN}NOT VULNERABLE{Style.RESET_ALL}"
         print(f"\nOverall Status: {vuln_status}")
-        print(f"Tests Run: {Fore.CYAN}{total}{Style.RESET_ALL}")
-        print(f"Success Rate: {self._colorize_percent(successes/total)}")
-        print(f"Block Rate: {self._colorize_percent(blocks/total)}")
-        
-        # Detailed results display...
-        # ... (rest of display logic with improved formatting)
+        print(f"Total tests run: {Fore.CYAN}{results.get('total_tests', 0)}{Style.RESET_ALL} \n")
+        print(f"Successful exploits: {Fore.RED}{len(results.get('successful_exploits', []))}{Style.RESET_ALL}")
+        print(f"Blocked attempts: {Fore.GREEN}{len(results.get('blocked_attempts', []))}{Style.RESET_ALL}")
+        print(f"Failed attempts: {len(results.get('failed_attempts', []))}\n")
 
-    def _colorize_percent(self, value: float) -> str:
-        """Colorize percentage values based on thresholds"""
-        percent = f"{value*100:.1f}%"
-        if value > 0.3:  # High vulnerability
-            return f"{Fore.RED}{percent}{Style.RESET_ALL}"
-        elif value > 0.1:  # Medium concern
-            return f"{Fore.YELLOW}{percent}{Style.RESET_ALL}"
-        return f"{Fore.GREEN}{percent}{Style.RESET_ALL}"
+        # Print detailed successful exploits with highlighting
+        if results.get('successful_exploits'):
+            print(f"{Fore.YELLOW}=== Successful Exploits ==={"="*53}{Style.RESET_ALL}")
+            for i, exploit in enumerate(results['successful_exploits'], 1):
+                print(f"\n{Fore.RED}Exploit #{i}: {exploit.get('test_name', 'Unnamed Test')}{Style.RESET_ALL}")
+                print(f"{Fore.CYAN}Prompt:{Style.RESET_ALL}\n{exploit['prompt']}")
+                
+                # Highlight matched indicators in the response
+                if 'matched_indicators' in exploit:
+                    indicators = exploit['matched_indicators']
+                else:
+                    indicators = exploit.get('success_indicators', [])
+                
+                # Show the analyzed text if a specific field was extracted
+                if 'analyzed_text' in exploit and self.response_field:
+                    print(f"\n{Fore.CYAN}Analyzed Field ({self.response_field}):{Style.RESET_ALL}")
+                    highlighted_text = self._highlight_indicators(
+                        exploit['analyzed_text'],
+                        indicators
+                    )
+                    print(highlighted_text)
+                    
+                    # Optionally show full response in collapsed form
+                    print(f"\n{Fore.CYAN}Full Response (preview):{Style.RESET_ALL}")
+                    if len(exploit['full_response']) > 100:
+                        print(f"{exploit['full_response'][:100]}... (truncated)")
+                    else:
+                        print(exploit['full_response'])
+                else:
+                    # Original behavior for full response
+                    highlighted_response = self._highlight_indicators(
+                        exploit['full_response'],
+                        indicators
+                    )
+                    print(f"\n{Fore.CYAN}Response:{Style.RESET_ALL}\n{highlighted_response}")
+                
+                # Display matched indicators
+                if 'matched_indicators' in exploit and exploit['matched_indicators']:
+                    print(f"\n{Fore.YELLOW}Matched Indicators:{Style.RESET_ALL}")
+                    for indicator in exploit['matched_indicators']:
+                        print(f"- {indicator}")
+
+        if results.get('blocked_attempts'):
+            print(f"\n{Fore.YELLOW}=== Blocked Attempts ==={"="*55}{Style.RESET_ALL}")
+            for i, attempt in enumerate(results['blocked_attempts'], 1):
+                print(f"\n{Fore.GREEN}Attempt #{i}: {attempt.get('test_name', 'Unnamed Test')}{Style.RESET_ALL}")
+                print(f"{Fore.CYAN}Prompt:{Style.RESET_ALL}\n{attempt['prompt']}")
+                
+                # Highlight matched indicators in the response
+                if 'matched_indicators' in attempt:
+                    indicators = attempt['matched_indicators']
+                else:
+                    indicators = attempt.get('failure_indicators', [])
+                
+                # Show the analyzed text if a specific field was extracted
+                if 'analyzed_text' in attempt and self.response_field:
+                    print(f"\n{Fore.CYAN}Analyzed Field ({self.response_field}):{Style.RESET_ALL}")
+                    highlighted_text = self._highlight_indicators(
+                        attempt['analyzed_text'],
+                        indicators
+                    )
+                    print(highlighted_text)
+                    
+                    # Optionally show full response in collapsed form
+                    print(f"\n{Fore.CYAN}Full Response (preview):{Style.RESET_ALL}")
+                    if len(attempt['full_response']) > 100:
+                        print(f"{attempt['full_response'][:100]}... (truncated)")
+                    else:
+                        print(attempt['full_response'])
+                else:
+                    # Original behavior for full response
+                    highlighted_response = self._highlight_indicators(
+                        attempt['full_response'],
+                        indicators
+                    )
+                    print(f"\n{Fore.CYAN}Response:{Style.RESET_ALL}\n{highlighted_response}")
+                
+                # Display matched indicators
+                if 'matched_indicators' in attempt and attempt['matched_indicators']:
+                    print(f"\n{Fore.YELLOW}Matched Indicators:{Style.RESET_ALL}")
+                    for indicator in attempt['matched_indicators']:
+                        print(f"- {indicator}")
+                
+        print("\n" + "="*80)
+    
+    def _highlight_indicators(self, response: str, indicators: List[str]) -> str:
+        """
+        Highlight indicators found in the response
+        
+        :param response: Response text
+        :param indicators: List of indicators to highlight
+        :return: Highlighted response text
+        """
+        highlighted = response
+        for indicator in indicators:
+            if indicator.lower() in highlighted.lower():
+                # Find all case-insensitive matches
+                start_idx = 0
+                while True:
+                    match_idx = highlighted.lower().find(indicator.lower(), start_idx)
+                    if match_idx == -1:
+                        break
+                    # Replace the matched portion with colored version
+                    original_text = highlighted[match_idx:match_idx+len(indicator)]
+                    highlighted = (
+                        highlighted[:match_idx] + 
+                        f"{Back.RED}{Fore.WHITE}{original_text}{Style.RESET_ALL}" + 
+                        highlighted[match_idx+len(indicator):]
+                    )
+                    start_idx = match_idx + len(indicator) + len(Back.RED + Fore.WHITE + Style.RESET_ALL)
+        return highlighted
+
+    def save_results(self, results: Dict, output_file: str) -> None:
+        """
+        Save fuzzing results to a JSON file
+        
+        :param results: Fuzzing results dictionary
+        :param output_file: Path to output file
+        """
+        try:
+            with open(output_file, 'w') as f:
+                json.dump(results, f, indent=2)
+            print(f"Results saved to {output_file}")
+        except Exception as e:
+            print(f"Error saving results: {e}")
+
