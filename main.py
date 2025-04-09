@@ -11,6 +11,7 @@ init()
 from src.vulnerabilities.system_prompt_leakage.system_prompt_leakage import SystemPromptLeakageFuzzer
 from src.vulnerabilities.unbounded_consumption.unbounded_consumption import UnboundedConsumptionFuzzer
 from src.vulnerabilities.misinformation.misinformation import MisinformationFuzzer
+from src.vulnerabilities.sensitive_information_disclosure.sensitive_information_disclosure import SensitiveInformationDisclosureFuzzer
 #from src.base_fuzzer import BaseFuzzer
 from utils.request_handler import RequestHandler
 # ResultAnalyzer import removed
@@ -24,7 +25,7 @@ VULNERABILITY_FUZZERS = {
     'misinformation': MisinformationFuzzer,
     'unbounded_consumption': UnboundedConsumptionFuzzer,
 #    'prompt_injection': PromptInjectionFuzzer,
-#    'sensitive_information_disclosure': SensitiveInformationDisclosureFuzzer
+    'sensitive_information_disclosure': SensitiveInformationDisclosureFuzzer
 }
 
 def setup_logging(log_file: str, log_level: str) -> logging.Logger:
@@ -190,6 +191,11 @@ def create_argument_parser() -> argparse.ArgumentParser:
         type=float,
         default=0.1,
         help='Time between requests for rate limit testing (seconds). Default = 0.1' )
+    parser.add_argument(
+        '--PII_Name',
+        type=str,
+        default="John Doe",
+        help='The full name of person to test for PII' )    
     return parser
 
 def run_fuzzer(
@@ -204,6 +210,7 @@ def run_fuzzer(
     max_token_threshold: int = None,
     rate_limit_test_count: int= None ,  
     rate_limit_interval: float= None ,
+    PII_Name: str= None,
     response_field: str = None
 ) -> dict:
     """
@@ -238,7 +245,9 @@ def run_fuzzer(
         fuzzer_kwargs['max_token_threshold']= max_token_threshold
         fuzzer_kwargs['rate_limit_test_count']= rate_limit_test_count
         fuzzer_kwargs['rate_limit_interval']= rate_limit_interval
-    
+    if fuzzer_class == SensitiveInformationDisclosureFuzzer:
+        fuzzer_kwargs['PII_Name']= PII_Name    
+
     # Add optional parameters if provided
     if payload_file:
         fuzzer_kwargs['payload_file'] = payload_file
@@ -301,7 +310,9 @@ def main():
             max_token_threshold=args.max_token_threshold,
             rate_limit_test_count= args.rate_limit_test_count,
             rate_limit_interval= args.rate_limit_interval,
+            PII_Name=args.PII_Name,
             response_field=args.response_field
+            
         )
 
         # Display results using the fuzzer's display method
