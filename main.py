@@ -195,7 +195,12 @@ def create_argument_parser() -> argparse.ArgumentParser:
         '--PII_Name',
         type=str,
         default="John Doe",
-        help='The full name of person to test for PII' )    
+        help='The full name of person to test for PII' )
+    parser.add_argument(
+        '--proxy',
+        type=str,
+        default='http://127.0.0.1:8080',
+        help='specify the proxy . Example: Burp proxy http://127.0.0.1:8080' )        
     return parser
 
 def run_fuzzer(
@@ -211,6 +216,7 @@ def run_fuzzer(
     rate_limit_test_count: int= None ,  
     rate_limit_interval: float= None ,
     PII_Name: str= None,
+    proxy: str= None,
     response_field: str = None
 ) -> dict:
     """
@@ -228,7 +234,7 @@ def run_fuzzer(
     :return: Fuzzing results
     """
     # Initialize request handler
-    request_handler = RequestHandler(raw_request_file=raw_request_file)
+    request_handler = RequestHandler(raw_request_file=raw_request_file,proxy=proxy)
     
     # Get the appropriate fuzzer class
     fuzzer_class = VULNERABILITY_FUZZERS[vulnerability]
@@ -255,6 +261,8 @@ def run_fuzzer(
         fuzzer_kwargs['success_indicators_file'] = success_indicators_file
     if failure_indicators_file:
         fuzzer_kwargs['failure_indicators_file'] = failure_indicators_file
+    
+        
     
     # Create fuzzer instance
     fuzzer = fuzzer_class(**fuzzer_kwargs)
@@ -311,12 +319,14 @@ def main():
             rate_limit_test_count= args.rate_limit_test_count,
             rate_limit_interval= args.rate_limit_interval,
             PII_Name=args.PII_Name,
+            proxy=args.proxy,
             response_field=args.response_field
             
         )
 
         # Display results using the fuzzer's display method
         fuzzer_class = VULNERABILITY_FUZZERS[args.vulnerability]
+        print(list(results.keys()))
         fuzzer = fuzzer_class(
             model_endpoint=args.endpoint,
             request_handler=RequestHandler(raw_request_file=args.raw_request),
