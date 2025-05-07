@@ -6,14 +6,15 @@ import logging
 import os
 import banner
 from colorama import Fore, Back, Style, init
+from typing import Dict, List, Optional, Union, Any
 init()
-#from src.vulnerabilities.prompt_injection import PromptInjectionFuzzer
 from src.vulnerabilities.system_prompt_leakage.system_prompt_leakage import SystemPromptLeakageFuzzer
 from src.vulnerabilities.unbounded_consumption.unbounded_consumption import UnboundedConsumptionFuzzer
 from src.vulnerabilities.misinformation.misinformation import MisinformationFuzzer
 from src.vulnerabilities.sensitive_information_disclosure.sensitive_information_disclosure import SensitiveInformationDisclosureFuzzer
-#from src.base_fuzzer import BaseFuzzer
 from utils.request_handler import RequestHandler
+from src.reporting.report_generator import ReportGenerator
+
 # ResultAnalyzer import removed
 
 # Update the vulnerability fuzzers dictionary
@@ -199,9 +200,34 @@ def create_argument_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         '--proxy',
         type=str,
-        default='http://127.0.0.1:8080',
-        help='specify the proxy . Example: Burp proxy http://127.0.0.1:8080' )        
+        help='specify the proxy . Example: Burp proxy http://127.0.0.1:8080' )
+    parser.add_argument(
+        '--report',
+        type=str,
+        help='Output file of the generated HTML report' )        
     return parser
+
+def _load_vulnerabilities_definitions( file_path: str, vulnerability: str) -> List[Dict]:
+    """
+    Load test cases from a JSON file with error handling
+    
+    :param file_path: Path to tests JSON file
+    :return: List of test dictionaries
+    """
+    try:
+        with open(file_path, 'r') as f:
+            data = json.load(f)
+            # Return the list of tests from the JSON structure
+            return data.get(vulnerability, [])
+    except FileNotFoundError:
+        print(f"vulnerabilities definitions file not found: {file_path}")
+        return []
+    except json.JSONDecodeError as e:
+        print(f"Error parsing JSON in vulnerabilities definitions file: {e}")
+        return []
+    except Exception as e:
+        print(f"Error reading vulnerabilities definitions file: {e}")
+        return [] 
 
 def run_fuzzer(
     endpoint: str, 
@@ -217,6 +243,7 @@ def run_fuzzer(
     rate_limit_interval: float= None ,
     PII_Name: str= None,
     proxy: str= None,
+    report: str= None,
     response_field: str = None
 ) -> dict:
     """
@@ -262,7 +289,8 @@ def run_fuzzer(
     if failure_indicators_file:
         fuzzer_kwargs['failure_indicators_file'] = failure_indicators_file
     
-        
+    
+  
     
     # Create fuzzer instance
     fuzzer = fuzzer_class(**fuzzer_kwargs)
@@ -320,19 +348,28 @@ def main():
             rate_limit_interval= args.rate_limit_interval,
             PII_Name=args.PII_Name,
             proxy=args.proxy,
+            report=args.report,
             response_field=args.response_field
             
         )
 
         # Display results using the fuzzer's display method
         fuzzer_class = VULNERABILITY_FUZZERS[args.vulnerability]
-        print(list(results.keys()))
+        
         fuzzer = fuzzer_class(
             model_endpoint=args.endpoint,
             request_handler=RequestHandler(raw_request_file=args.raw_request),
             response_field=args.response_field
         )
         fuzzer.display_results(results, args.response_field)
+
+        if args.report:
+            base_dir = os.path.dirname(__file__)
+            vulnerabilities_definitions_file = os.path.join(base_dir, './src/vulnerabilities/vulnerability_definitions.json')
+            vulnerabilities_definitions = _load_vulnerabilities_definitions(vulnerabilities_definitions_file, "system_prompt_leakage")
+            ReportGeneratorClass= ReportGenerator(results,vulnerabilities_definitions)
+            ReportGeneratorClass.generate_report()
+
 
     except Exception as e:
         logger.error(f"Fuzzing failed: {e}")
