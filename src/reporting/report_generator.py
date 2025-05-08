@@ -9,16 +9,16 @@ import jinja2
 import matplotlib.pyplot as plt
 import base64
 from io import BytesIO
+import weasyprint  # For PDF generation
 
 class ReportGenerator:
     def __init__(self, results, vulnerability_info=None, output_file="report.html", 
-                  template_file=None):
+                   output_format="html",template_file=None):
         self.results = results
         self.output_file = output_file
         self.vulnerability_info = vulnerability_info or {}
         self.template_file = template_file or os.path.join(os.path.dirname(__file__), "templates", "default_template.html")
-
-        print("INSIIIIIIDEEE", self.vulnerability_info)
+        self.output_format = output_format.lower()  # 'html' or 'pdf'
         
         # Create templates directory if it doesn't exist
         os.makedirs(os.path.dirname(self.template_file), exist_ok=True)
@@ -165,8 +165,8 @@ class ReportGenerator:
             "vulnerabilities_found": len(self.data.get("successful_exploits", [])),
             "prompts_blocked": len(self.data.get("blocked_attempts", [])),
             "endpoint_tested": fuzzing_metadata.get("endpoint", "N/A"),
-            "start_time":  datetime.fromisoformat(fuzzing_metadata.get("start_time", "N/A")).strftime("%Y-%m-%d %H:%M:%S"),
-            "success_rate": round(insights.get("success_rate", 0),2)  if insights.get("success_rate") is not None else None,
+            "start_time": datetime.fromisoformat(fuzzing_metadata.get("start_time", "N/A")).strftime("%Y-%m-%d %H:%M:%S") if fuzzing_metadata.get("start_time", "N/A") != "N/A" else "N/A",
+            "success_rate": round(insights.get("success_rate", 0),2) if insights.get("success_rate") is not None else None,
             "block_rate": insights.get("block_rate", 0) * 100 if insights.get("block_rate") is not None else None,
             "charts": charts,
             "exploits": successful_exploits,
@@ -184,13 +184,8 @@ class ReportGenerator:
             print(f"Error encoding image {image_path}: {e}")
             return None
     
-
-    
     def generate_report(self):
-        """Generate the HTML report using the template and data"""
-        # Ensure default template exists
-        
-        
+        """Generate the HTML report and/or PDF based on output format"""
         # Prepare data for template
         template_data = self.prepare_template_data()
         if not template_data:
@@ -201,16 +196,89 @@ class ReportGenerator:
             template = self.env.get_template(os.path.basename(self.template_file))
             
             # Render the template with data
-            output = template.render(**template_data)
+            html_output = template.render(**template_data)
             
-            # Write the output to file
-            with open(self.output_file, 'w', encoding='utf-8') as f:
-                f.write(output)
+            # Handle different output formats
+            if self.output_format == "html" or self.output_format == "both":
+                html_file = self.output_file
+                with open(html_file, 'w', encoding='utf-8') as f:
+                    f.write(html_output)
+                print(f"HTML report successfully generated: {html_file}")
             
-            print(f"Report successfully generated: {self.output_file}")
+            if self.output_format == "pdf" or self.output_format == "both":
+                pdf_file = self.output_file.replace('.html', '.pdf') if self.output_file.endswith('.html') else f"{self.output_file}.pdf"
+                self._generate_pdf(html_output, pdf_file)
+                print(f"PDF report successfully generated: {pdf_file}")
+            
             return True
             
         except Exception as e:
             print(f"Error generating report: {e}")
             return False
+    
+    def _generate_pdf(self, html_content, output_file):
+        """Generate PDF from HTML content"""
+        try:
+            # Create PDF from HTML
+            pdf = weasyprint.HTML(string=html_content)
+            pdf.write_pdf(output_file)
+            return True
+        except Exception as e:
+            print(f"Error generating PDF: {e}")
+            return False
 
+
+def parse_arguments():
+    """Parse command line arguments"""
+    parser = argparse.ArgumentParser(description='Generate security vulnerability reports')
+    parser.add_argument('--results', '-r', required=True, help='JSON results file or JSON string')
+    parser.add_argument('--output', '-o', default='report.html', help='Output file path')
+    parser.add_argument('--template', '-t', help='HTML template file path')
+    parser.add_argument('--format', '-f', choices=['html', 'pdf', 'both'], default='html', 
+                        help='Output format (html, pdf, or both)')
+    
+    # Add vulnerability info arguments
+    parser.add_argument('--vuln-type', help='Vulnerability type')
+    parser.add_argument('--vuln-description', help='Vulnerability description')
+    parser.add_argument('--vuln-impact', help='Vulnerability impact')
+    parser.add_argument('--vuln-remediation', help='Vulnerability remediation')
+    
+    return parser.parse_args()
+
+def main():
+    """Main function to run the report generator from command line"""
+    args = parse_arguments()
+    
+    # Build vulnerability info
+    vulnerability_info = {
+        "type": args.vuln_type,
+        "description": args.vuln_description,
+        "impact": args.vuln_impact,
+        "remediation": args.vuln_remediation
+    }
+    
+    # Check if results is a file path or JSON string
+    if os.path.isfile(args.results):
+        results = args.results
+    else:
+        try:
+            # Assume it's a JSON string
+            results = json.loads(args.results)
+        except json.JSONDecodeError:
+            print("Error: Results must be a valid JSON file path or JSON string")
+            return 1
+    
+    # Create and run report generator
+    generator = ReportGenerator(
+        results=results,
+        vulnerability_info=vulnerability_info,
+        output_file=args.output,
+        template_file=args.template,
+        output_format=args.format
+    )
+    
+    success = generator.generate_report()
+    return 0 if success else 1
+
+if __name__ == "__main__":
+    exit(main())

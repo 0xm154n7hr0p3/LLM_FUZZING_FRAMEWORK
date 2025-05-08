@@ -14,6 +14,14 @@ from src.vulnerabilities.misinformation.misinformation import MisinformationFuzz
 from src.vulnerabilities.sensitive_information_disclosure.sensitive_information_disclosure import SensitiveInformationDisclosureFuzzer
 from utils.request_handler import RequestHandler
 from src.reporting.report_generator import ReportGenerator
+import time
+import sys
+import threading
+
+
+
+
+
 
 # ResultAnalyzer import removed
 
@@ -80,6 +88,17 @@ def setup_logging(log_file: str, log_level: str) -> logging.Logger:
     logger.addHandler(console_handler)
     
     return logger
+
+def loading_animation(stop_event):
+    spinner = ['⠋','⠙','⠹','⠸','⠼','⠴','⠦','⠧','⠇','⠏']
+    while not stop_event.is_set():
+        for symbol in spinner:
+            sys.stdout.write(f'\r {symbol}🔍 Fuzzing in progress ')
+            sys.stdout.flush()
+            time.sleep(0.1)
+            if stop_event.is_set():
+                break
+    sys.stdout.write('\r✅ Fuzzing complete!          \n')
 
 def create_argument_parser() -> argparse.ArgumentParser:
     """
@@ -202,9 +221,14 @@ def create_argument_parser() -> argparse.ArgumentParser:
         type=str,
         help='specify the proxy . Example: Burp proxy http://127.0.0.1:8080' )
     parser.add_argument(
-        '--report',
+        '-O','--report_file',
         type=str,
-        help='Output file of the generated HTML report' )        
+        help='report file of the generated  report' )   
+    parser.add_argument(
+        '-F','--report_format',
+        type=str,
+        choices=['html', 'pdf', 'both'], 
+        default='html' )      
     return parser
 
 def _load_vulnerabilities_definitions( file_path: str, vulnerability: str) -> List[Dict]:
@@ -243,7 +267,8 @@ def run_fuzzer(
     rate_limit_interval: float= None ,
     PII_Name: str= None,
     proxy: str= None,
-    report: str= None,
+    report_file: str= None,
+    report_format: str= None,
     response_field: str = None
 ) -> dict:
     """
@@ -301,16 +326,16 @@ def run_fuzzer(
 
     # Run fuzzing
     global logger  # Use the global logger
-    logger.info(f"Starting fuzzing for {vulnerability} vulnerability")
+    logger.info(f"\n Starting fuzzing for {vulnerability} vulnerability")
     results = fuzzer.fuzz()
 
     # Save results to file
     try:
         with open(output_file, 'w') as f:
             json.dump(results, f, indent=2)
-        logger.info(f"Results saved to {output_file}")
+        logger.info(f"\nResults saved to {output_file}")
     except IOError as e:
-        logger.error(f"Failed to write results: {e}")
+        logger.error(f"\nFailed to write results: {e}")
 
     return results
 
@@ -330,6 +355,9 @@ def main():
     # Setup global logger
     global logger
     logger = setup_logging(args.log_file, args.log_level)
+    stop_event = threading.Event()
+    spinner_thread = threading.Thread(target=loading_animation, args=(stop_event,))
+    spinner_thread.start()
 
     try:
         
@@ -348,10 +376,13 @@ def main():
             rate_limit_interval= args.rate_limit_interval,
             PII_Name=args.PII_Name,
             proxy=args.proxy,
-            report=args.report,
+            report_file=args.report_file,
+            report_format=args.report_format,
             response_field=args.response_field
             
         )
+        stop_event.set()
+        spinner_thread.join()
 
         # Display results using the fuzzer's display method
         fuzzer_class = VULNERABILITY_FUZZERS[args.vulnerability]
@@ -361,13 +392,15 @@ def main():
             request_handler=RequestHandler(raw_request_file=args.raw_request),
             response_field=args.response_field
         )
-        fuzzer.display_results(results, args.response_field)
+        
 
-        if args.report:
-            base_dir = os.path.dirname(__file__)
-            vulnerabilities_definitions_file = os.path.join(base_dir, './src/vulnerabilities/vulnerability_definitions.json')
-            vulnerabilities_definitions = _load_vulnerabilities_definitions(vulnerabilities_definitions_file, "system_prompt_leakage")
-            ReportGeneratorClass= ReportGenerator(results,vulnerabilities_definitions)
+        fuzzer.display_results(results, args.response_field)
+        base_dir = os.path.dirname(__file__)
+        vulnerabilities_definitions_file = os.path.join(base_dir, './src/vulnerabilities/vulnerability_definitions.json')
+        vulnerabilities_definitions = _load_vulnerabilities_definitions(vulnerabilities_definitions_file, args.vulnerability)
+
+        if args.report_file:
+            ReportGeneratorClass= ReportGenerator(results,vulnerabilities_definitions,args.report_file,args.report_format)
             ReportGeneratorClass.generate_report()
 
 

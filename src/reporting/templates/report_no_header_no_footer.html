@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM Fuzzer Security Report</title>
+    <style>
+        :root {
+            --primary-color: #008eab;
+            --secondary-color: #008eab;
+            --danger-color: #ef4444;
+            --warning-color: #f59e0b;
+            --success-color: #10b981;
+            --neutral-color: #6b7280;
+            --bg-color: #f3f4f6;
+            --card-bg: #ffffff;
+            --text-primary: #1f2937;
+            --text-secondary: #4b5563;
+            --border-color: #e5e7eb;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --radius: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: var(--card-bg);
+        }
+
+        .report-info {
+            margin: 0;
+            padding: 2rem;
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .report-info h2 {
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+        }
+
+        .security-level {
+            font-size: 1.2rem;
+            font-weight: 600;
+            padding: 1rem;
+            border-radius: var(--radius);
+            margin: 1.5rem 0;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .security-level::before {
+            content: "";
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+        }
+
+        .level-VeryHigh { 
+            background-color: #ecfdf5; 
+            color: #065f46; 
+        }
+        .level-VeryHigh::before { background-color: #10b981; }
+        
+        .level-High { 
+            background-color: #d1fae5; 
+            color: #065f46; 
+        }
+        .level-High::before { background-color: #34d399; }
+        
+        .level-Medium { 
+            background-color: #fffbeb; 
+            color: #92400e; 
+        }
+        .level-Medium::before { background-color: #fbbf24; }
+        
+        .level-Low { 
+            background-color: #fef2f2; 
+            color: #991b1b; 
+        }
+        .level-Low::before { background-color: #f87171; }
+        
+        .level-VeryLow { 
+            background-color: #fee2e2; 
+            color: #7f1d1d; 
+        }
+        .level-VeryLow::before { background-color: #ef4444; }
+        
+        .level-Unknown { 
+            background-color: #f3f4f6; 
+            color: #1f2937; 
+        }
+        .level-Unknown::before { background-color: #9ca3af; }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .info-item {
+            padding: 1rem;
+            background-color: #f9fafb;
+            border-radius: var(--radius);
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .info-item strong {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .section {
+            margin: 0;
+            padding: 2rem;
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section h2 {
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--border-color);
+            position: relative;
+        }
+
+        .section h2::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 60px;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+
+        .section h3 {
+            margin: 1.5rem 0 1rem;
+            color: var(--text-primary);
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: #f9fafb;
+            border-radius: var(--radius);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .stat-box:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 0.5rem 0;
+            color: var(--primary-color);
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .charts-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .chart-box {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: #f9fafb;
+            border-radius: var(--radius);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .chart-box h3 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .chart-box img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        th, td {
+            padding: 1rem 1.5rem;
+            text-align: left;
+            border: none;
+            border-bottom: 1px solid var(--border-color);
+            word-break: break-word;
+        }
+
+        th {
+            background-color: #f9fafb;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover {
+            background-color: #f9fafb;
+        }
+
+        .exploit-details {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background-color: #f9fafb;
+            border-radius: var(--radius);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .exploit-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .exploit-header h3 {
+            margin: 0;
+            color: var(--primary-color);
+        }
+
+        .exploit-header span {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            background-color: #edf2f7;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+        }
+
+        .payload, .response-preview {
+            background-color: #f1f5f9;
+            padding: 1rem;
+            border-radius: 4px;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            margin: 0.75rem 0 1.5rem;
+            line-height: 1.5;
+            color: #334155;
+            border: 1px solid #e2e8f0;
+        }
+
+        .response-preview {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .indicator-list {
+            list-style: none;
+            margin: 0.75rem 0 1.5rem;
+            padding: 0;
+        }
+
+        .indicator-list li {
+            padding: 0.5rem 0.75rem;
+            margin-bottom: 0.5rem;
+            background-color: #edf2f7;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .indicator-list li::before {
+            content: "•";
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .section-heading {
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .remediation-list {
+            list-style: none;
+            margin: 1.5rem 0;
+            padding: 0;
+        }
+
+        .remediation-list li {
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background-color: #f9fafb;
+            border-radius: var(--radius);
+            border-left: 4px solid var(--primary-color);
+        }
+
+        @media (max-width: 768px) {
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .charts-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .exploit-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="report-info">
+            <h2>Executive Summary</h2>
+            <div class="security-level level-{{ security_level.replace(' ', '') }}">
+                Overall Security Level: {{ security_level }}
+            </div>
+            
+            <div class="info-grid">
+                <div class="info-item">
+                    <strong>Endpoint Tested</strong>
+                    <span>{{ endpoint_tested }}</span>
+                </div>
+                <div class="info-item">
+                    <strong>Testing Started</strong>
+                    <span>{{ start_time }}</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Vulnerability Information</h2>
+            <h3>{{ vulnerability_type }}</h3>
+            <div class="info-grid">
+                <div class="info-item">
+                    <strong>Description</strong>
+                    <p>{{ vulnerability_description }}</p>
+                </div>
+                <div class="info-item">
+                    <strong>Impact</strong>
+                    <p>{{ vulnerability_impact }}</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Testing Summary</h2>
+            <div class="stats-container">
+                <div class="stat-box">
+                    <div class="stat-label">Tests Run</div>
+                    <div class="stat-value">{{ total_tests }}</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Vulnerabilities Found</div>
+                    <div class="stat-value">{{ vulnerabilities_found }}</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Prompts Blocked</div>
+                    <div class="stat-value">{{ prompts_blocked }}</div>
+                </div>
+                {% if success_rate is not none %}
+                <div class="stat-box">
+                    <div class="stat-label">Success Rate</div>
+                    <div class="stat-value">{{ success_rate }}%</div>
+                </div>
+                {% endif %}
+            </div>
+            
+            <div class="charts-container">
+                {% if charts.vulnerability_distribution %}
+                <div class="chart-box">
+                    <h3>Test Results</h3>
+                    <img src="data:image/png;base64,{{ charts.vulnerability_distribution }}" alt="Vulnerability Distribution">
+                </div>
+                {% endif %}
+                
+                {% if charts.rates_chart %}
+                <div class="chart-box">
+                    <h3>Success & Block Rates</h3>
+                    <img src="data:image/png;base64,{{ charts.rates_chart }}" alt="Rates Chart">
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Detected Vulnerabilities</h2>
+            
+            {% if exploits %}
+                {% for exploit in exploits %}
+                <div class="exploit-details">
+                    <div class="exploit-header">
+                        <h3>Exploit #{{ exploit.number }}</h3>
+                        
+                    </div>
+                    
+                    <p class="section-heading">Payload:</p>
+                    <div class="payload">{{ exploit.payload }}</div>
+                    
+                    <p class="section-heading">Indicators Matched:</p>
+                    <ul class="indicator-list">
+                        {% for indicator in exploit.indicators %}
+                        <li>{{ indicator }}</li>
+                        {% endfor %}
+                    </ul>
+                    
+                    <p class="section-heading">Analyzed Field:</p>
+                    <div class="payload">{{ exploit.analyzed_text }}</div>
+                    
+                    <p class="section-heading">Full Response (preview):</p>
+                    <div class="response-preview">{{ exploit.full_response }}</div>
+                </div>
+                {% endfor %}
+            {% else %}
+                <div class="info-item">
+                    <p>No vulnerabilities were detected during the test.</p>
+                </div>
+            {% endif %}
+        </div>
+        
+        <div class="section">
+            <h2>Remediation Recommendations</h2>
+            <ul class="indicator-list">
+                {% for recommendation in vulnerability_remediation %}
+                    <li>{{ recommendation }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
