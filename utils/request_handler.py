@@ -2,7 +2,7 @@
 import requests
 import json
 import os
-from typing import Dict, Any, Optional
+from typing import Dict, Any, Optional, Union
 
 class RequestHandler:
     """
@@ -11,6 +11,7 @@ class RequestHandler:
     def __init__(self, 
                  headers: Dict[str, str] = None, 
                  timeout: int = 30,
+                  proxy: Optional[Union[str, Dict[str, str]]] = None,
                  raw_request_file: Optional[str] = None):
         """
         Initialize request handler with optional headers, timeout, and raw request template.
@@ -25,6 +26,25 @@ class RequestHandler:
         }
         self.timeout = timeout
         self.raw_request_template = self._load_raw_request_template(raw_request_file) if raw_request_file else None
+        self.proxies = self._setup_proxies(proxy)
+
+    def _setup_proxies(self, proxy: Optional[Union[str, Dict[str, str]]]) -> Optional[Dict[str, str]]:
+        """
+        Set up proxy configuration.
+        
+        :param proxy: Proxy configuration as string or dict
+        :return: Proxy configuration dict compatible with requests
+        """
+        if not proxy:
+            return None
+            
+        if isinstance(proxy, str):
+            # Convert string proxy to dict format
+            return {
+                'http': proxy,
+                'https': proxy
+            }
+        return proxy
 
     def _load_raw_request_template(self, raw_request_file: str) -> str:
         """
@@ -78,6 +98,7 @@ class RequestHandler:
                         endpoint, 
                         headers=headers, 
                         params=json.loads(body) if body else None,
+                        proxies=self.proxies,
                         timeout=self.timeout
                     )
                 elif method == 'POST':
@@ -85,6 +106,7 @@ class RequestHandler:
                         endpoint, 
                         headers=headers, 
                         data=body,
+                        proxies=self.proxies,
                         timeout=self.timeout
                     )
                     
@@ -106,6 +128,7 @@ class RequestHandler:
                 endpoint, 
                 json={'prompt': prompt},
                 headers=self.headers,
+                proxies=self.proxies,
                 timeout=self.timeout
             )
             

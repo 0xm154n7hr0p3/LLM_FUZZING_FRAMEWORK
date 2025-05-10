@@ -146,7 +146,7 @@ class UnboundedConsumptionFuzzer:
             "response_times": [],
             "error_messages": []
         }
-        print(f"{Fore.YELLOW} Inside of the function test rate limit test count :{self.rate_limit_test_count} \n limit interval {self.rate_limit_interval} {Style.RESET_ALL}")
+        print(f"{Fore.YELLOW}    Inside of the function test rate limit test count :{self.rate_limit_test_count} \n limit interval {self.rate_limit_interval} {Style.RESET_ALL}")
         for i in range(self.rate_limit_test_count):
             try:
                 start_time = time.time()
