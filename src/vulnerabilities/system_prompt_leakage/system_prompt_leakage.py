@@ -251,48 +251,73 @@ class SystemPromptLeakageFuzzer:
         # Tracking metadata for the entire fuzzing session
         fuzzing_metadata = {
             'start_time': datetime.datetime.now().isoformat(),
-            'total_payloads': len(self.payloads),
+            'total_payloads': None,
             'endpoint': self.model_endpoint
         }
-        
+        actual_payload_count = 0
         # Test each payload
         for payload in self.payloads:
             try:
                 # Send request with payload
-                response = self.request_handler.send_request(
+                result = self.request_handler.send_request(
                     self.model_endpoint, 
                     payload
                 )
                 
-                # Use integrated response analysis
-                result_entry = self.analyze_response(
-                    payload=payload, 
-                    response=response,
-                    success_indicators=self.success_indicators,
-                    failure_indicators=self.failure_indicators
-                )
-                
-                # Add additional metadata to the result
-                result_entry.update({
+                # Handle both single response and multiple responses
+                if isinstance(result, list):  # If we got multiple results back
+                    # Process each response/payload pair
+                    for response, processed_payload in result:
+                        # Use integrated response analysis
+                        actual_payload_count += 1
+                        result_entry = self.analyze_response(
+                            payload=processed_payload, 
+                            response=response,
+                            success_indicators=self.success_indicators,
+                            failure_indicators=self.failure_indicators
+                        )
+                        
+                        # Add additional metadata to the result
+                        result_entry.update({
+                            'timestamp': datetime.datetime.now().isoformat(),
+                            'payload_length': len(processed_payload),
+                            'response_length': len(response)
+                        })
+                        
+                        individual_results.append(result_entry)
+                else:  # Single response case
+                    response, processed_payload = result
+                    
+                    # Use integrated response analysis
+                    actual_payload_count += 1
+                    result_entry = self.analyze_response(
+                        payload=processed_payload, 
+                        response=response,
+                        success_indicators=self.success_indicators,
+                        failure_indicators=self.failure_indicators
+                    )
+                    
+                    # Add additional metadata to the result
+                    result_entry.update({
+                        'timestamp': datetime.datetime.now().isoformat(),
+                        'payload_length': len(processed_payload),
+                        'response_length': len(response)
+                    })
+                    
+                    individual_results.append(result_entry)
+            except Exception as e:
+                # Handle exceptions that might occur during request processing
+                error_entry = {
                     'timestamp': datetime.datetime.now().isoformat(),
                     'payload_length': len(payload),
-                    'response_length': len(response)
-                })
-                
-                individual_results.append(result_entry)
-            
-            except Exception as e:
-                # Handle and log any errors during fuzzing
-                error_entry = {
-                    'payload': payload,
                     'error': str(e),
-                    'timestamp': datetime.datetime.now().isoformat(),
-                    'is_successful': False,
-                    'is_blocked': False
+                    'status': 'error'
                 }
                 individual_results.append(error_entry)
         
+        fuzzing_metadata['total_payloads'] = actual_payload_count
         # Use integrated aggregation
+
         aggregated_results = self.aggregate_results(individual_results)
         
         # Add fuzzing metadata to the final results
@@ -313,11 +338,12 @@ class SystemPromptLeakageFuzzer:
         :param results: Aggregated fuzzing results
         :return: Insights dictionary
         """
-        total_payloads = len(self.payloads)
+        fuzzing_metadata= results['fuzzing_metadata']
+        total_payloads=fuzzing_metadata['total_payloads']
         
         insights = {
-            'success_rate': len(results['successful_exploits']) / total_payloads * 100 if total_payloads > 0 else 0,
-            'block_rate': len(results['blocked_attempts']) / total_payloads * 100 if total_payloads > 0 else 0,
+            'success_rate': len(results['successful_exploits']) /  total_payloads * 100 if  total_payloads > 0 else 0,
+            'block_rate': len(results['blocked_attempts']) /  total_payloads * 100 if  total_payloads > 0 else 0,
             'most_revealing_payloads': sorted(
                 results['successful_exploits'], 
                 key=lambda x: len(x.get('full_response', '')), 

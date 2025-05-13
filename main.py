@@ -14,6 +14,12 @@ from src.vulnerabilities.misinformation.misinformation import MisinformationFuzz
 from src.vulnerabilities.sensitive_information_disclosure.sensitive_information_disclosure import SensitiveInformationDisclosureFuzzer
 from utils.request_handler import RequestHandler
 from src.reporting.report_generator import ReportGenerator
+from utils.bypass_techniques.DAN import DAN
+from utils.bypass_techniques.relative import relative
+from utils.bypass_techniques.history import history
+from utils.bypass_techniques.encoding_prompt import encoding_prompt
+from utils.bypass_techniques.ignore_instructions import ignore_instructions
+from utils.encoders.encoders import *
 import time
 import sys
 import threading
@@ -36,6 +42,31 @@ VULNERABILITY_FUZZERS = {
 #    'prompt_injection': PromptInjectionFuzzer,
     'sensitive_information_disclosure': SensitiveInformationDisclosureFuzzer
 }
+
+
+
+# Dictionary mapping of available bypass techniques
+BYPASS_TECHNIQUES = {
+    'DAN': DAN,
+    'relative': relative,
+    'encoding_prompt': encoding_prompt,
+    'history': history,
+    'ignore_instructions': ignore_instructions
+}
+
+# Dictionary mapping of available prompt encoders
+PROMPT_ENCODERS = {
+    'piped_string': piped_string,
+    'base32': base32_prompt,
+    'base64': base64_prompt,
+    'binary': binary_prompt,
+    'double_base64': double_base64_prompt,
+    'hex': hex_prompt,
+    'leet': leet_prompt,
+    'rot13': rot13_prompt,
+    'unicode': unicode_prompt
+}
+
 
 def setup_logging(log_file: str, log_level: str) -> logging.Logger:
     """
@@ -228,7 +259,18 @@ def create_argument_parser() -> argparse.ArgumentParser:
         '-F','--report_format',
         type=str,
         choices=['html', 'pdf', 'both'], 
-        default='html' )      
+        default='html' ) 
+    parser.add_argument(
+        '-E','--encoder',
+        type=str,
+        choices=list(PROMPT_ENCODERS.keys()), 
+        help="Specify the encoding algorithm to obfuscate the prompt") 
+    parser.add_argument(
+        '-B','--bypass_technique',
+        type=str,
+        choices=list(BYPASS_TECHNIQUES.keys()), 
+        help="Specify the bypass technique to obfuscate the prompt")        
+
     return parser
 
 def _load_vulnerabilities_definitions( file_path: str, vulnerability: str) -> List[Dict]:
@@ -267,6 +309,8 @@ def run_fuzzer(
     rate_limit_interval: float= None ,
     PII_Name: str= None,
     proxy: str= None,
+    encoder: str= None,
+    bypass_technique: str= None,
     report_file: str= None,
     report_format: str= None,
     response_field: str = None
@@ -286,7 +330,7 @@ def run_fuzzer(
     :return: Fuzzing results
     """
     # Initialize request handler
-    request_handler = RequestHandler(raw_request_file=raw_request_file,proxy=proxy)
+    request_handler = RequestHandler(raw_request_file=raw_request_file,proxy=proxy,encoder=encoder,bypass_technique=bypass_technique)
     
     # Get the appropriate fuzzer class
     fuzzer_class = VULNERABILITY_FUZZERS[vulnerability]
@@ -376,6 +420,8 @@ def main():
             rate_limit_interval= args.rate_limit_interval,
             PII_Name=args.PII_Name,
             proxy=args.proxy,
+            encoder= args.encoder,
+            bypass_technique= args.bypass_technique,
             report_file=args.report_file,
             report_format=args.report_format,
             response_field=args.response_field
@@ -386,6 +432,7 @@ def main():
 
         # Display results using the fuzzer's display method
         fuzzer_class = VULNERABILITY_FUZZERS[args.vulnerability]
+        
         
         fuzzer = fuzzer_class(
             model_endpoint=args.endpoint,
