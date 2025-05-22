@@ -562,11 +562,9 @@
                         {% endfor %}
                     </ul>
                     
-                    <p class="section-heading">Analyzed Field:</p>
-                    <div class="payload">{{ exploit.analyzed_text }}</div>
                     
-                    <p class="section-heading">Full Response (preview):</p>
-                    <div class="response-preview">{{ exploit.full_response }}</div>
+                    <p class="section-heading">Full Response </p>
+                    <div class="response-preview">{{ exploit.analyzed_text }}</div>
                 </div>
                 {% endfor %}
             {% else %}

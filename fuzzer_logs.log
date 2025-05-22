@@ -527,3 +527,159 @@ Results saved to fuzzer_results.json
  Starting fuzzing for system_prompt_leakage vulnerability
 2025-05-13 12:50:17 - LLMFuzzer - INFO - 
 Results saved to fuzzer_results.json
+2025-05-21 04:56:58 - LLMFuzzer - INFO - 
+ Starting fuzzing for system_prompt_leakage vulnerability
+2025-05-21 04:57:04 - LLMFuzzer - INFO - 
+Results saved to fuzzer_results.json
+2025-05-21 04:59:55 - LLMFuzzer - INFO - 
+ Starting fuzzing for system_prompt_leakage vulnerability
+2025-05-21 05:00:06 - LLMFuzzer - INFO - 
+Results saved to fuzzer_results.json
+2025-05-21 05:00:45 - LLMFuzzer - INFO - 
+ Starting fuzzing for system_prompt_leakage vulnerability
+2025-05-21 05:00:56 - LLMFuzzer - INFO - 
+Results saved to fuzzer_results.json
+2025-05-21 05:02:31 - LLMFuzzer - INFO - 
+ Starting fuzzing for system_prompt_leakage vulnerability
+2025-05-21 05:12:20 - LLMFuzzer - INFO - 
+Results saved to fuzzer_results.json
+2025-05-21 05:13:55 - LLMFuzzer - INFO - 
+ Starting fuzzing for misinformation vulnerability
+2025-05-21 05:14:04 - LLMFuzzer - INFO - 
+Results saved to fuzzer_results.json
+2025-05-21 05:22:37 - LLMFuzzer - INFO - 
+ Starting fuzzing for misinformation vulnerability
+2025-05-21 05:25:57 - LLMFuzzer - INFO - 
+Results saved to fuzzer_results.json
+2025-05-21 05:37:05 - LLMFuzzer - INFO - 
+ Starting fuzzing for misinformation vulnerability
+2025-05-21 05:37:17 - LLMFuzzer - ERROR - Fuzzing failed: 'MisinformationFuzzer' object has no attribute '_generate_insights'
+2025-05-21 05:37:53 - LLMFuzzer - INFO - 
+ Starting fuzzing for misinformation vulnerability
+2025-05-21 05:38:12 - LLMFuzzer - INFO - 
+Results saved to fuzzer_results.json
+2025-05-21 05:42:17 - LLMFuzzer - INFO - 
+ Starting fuzzing for misinformation vulnerability
+2025-05-21 05:42:27 - LLMFuzzer - INFO - 
+Results saved to fuzzer_results.json
+2025-05-21 05:48:54 - LLMFuzzer - INFO - 
+ Starting fuzzing for misinformation vulnerability
+2025-05-21 05:49:19 - LLMFuzzer - INFO - 
+Results saved to fuzzer_results.json
+2025-05-21 05:50:06 - LLMFuzzer - INFO - 
+ Starting fuzzing for misinformation vulnerability
+2025-05-21 05:50:28 - LLMFuzzer - INFO - 
+Results saved to fuzzer_results.json
+2025-05-21 05:50:54 - LLMFuzzer - INFO - 
+ Starting fuzzing for misinformation vulnerability
+2025-05-21 05:51:06 - LLMFuzzer - INFO - 
+Results saved to fuzzer_results.json
+2025-05-21 05:51:13 - LLMFuzzer - INFO - 
+ Starting fuzzing for misinformation vulnerability
+2025-05-21 05:51:27 - LLMFuzzer - INFO - 
+Results saved to fuzzer_results.json
+2025-05-21 05:55:25 - LLMFuzzer - INFO - 
+ Starting fuzzing for misinformation vulnerability
+2025-05-21 05:55:36 - LLMFuzzer - INFO - 
+Results saved to fuzzer_results.json
+2025-05-21 05:56:43 - LLMFuzzer - INFO - 
+ Starting fuzzing for misinformation vulnerability
+2025-05-21 05:57:11 - LLMFuzzer - INFO - 
+Results saved to fuzzer_results.json
+2025-05-21 05:58:49 - LLMFuzzer - INFO - 
+ Starting fuzzing for misinformation vulnerability
+2025-05-21 06:02:01 - LLMFuzzer - INFO - 
+Results saved to fuzzer_results.json
+2025-05-21 06:07:46 - LLMFuzzer - INFO - 
+ Starting fuzzing for misinformation vulnerability
+2025-05-21 06:07:46 - LLMFuzzer - INFO - 
+Results saved to fuzzer_results.json
+2025-05-21 06:08:23 - LLMFuzzer - INFO - 
+ Starting fuzzing for misinformation vulnerability
+2025-05-21 06:08:23 - LLMFuzzer - INFO - 
+Results saved to fuzzer_results.json
+2025-05-21 06:09:17 - LLMFuzzer - INFO - 
+ Starting fuzzing for misinformation vulnerability
+2025-05-21 06:09:17 - LLMFuzzer - INFO - 
+Results saved to fuzzer_results.json
+2025-05-21 06:09:31 - LLMFuzzer - INFO - 
+ Starting fuzzing for misinformation vulnerability
+2025-05-21 06:09:31 - LLMFuzzer - INFO - 
+Results saved to fuzzer_results.json
+2025-05-21 06:09:49 - LLMFuzzer - INFO - 
+ Starting fuzzing for misinformation vulnerability
+2025-05-21 06:10:31 - LLMFuzzer - INFO - 
+ Starting fuzzing for misinformation vulnerability
+2025-05-21 06:13:47 - LLMFuzzer - INFO - 
+Results saved to fuzzer_results.json
+2025-05-21 06:15:25 - LLMFuzzer - INFO - 
+ Starting fuzzing for misinformation vulnerability
+2025-05-21 06:18:35 - LLMFuzzer - INFO - 
+Results saved to fuzzer_results.json
+2025-05-21 06:19:35 - LLMFuzzer - INFO - 
+ Starting fuzzing for misinformation vulnerability
+2025-05-21 06:19:53 - LLMFuzzer - INFO - 
+Results saved to fuzzer_results.json
+2025-05-21 06:22:24 - LLMFuzzer - INFO - 
+ Starting fuzzing for misinformation vulnerability
+2025-05-21 06:22:45 - LLMFuzzer - INFO - 
+Results saved to fuzzer_results.json
+2025-05-21 06:36:26 - LLMFuzzer - INFO - 
+ Starting fuzzing for misinformation vulnerability
+2025-05-21 06:39:18 - LLMFuzzer - INFO - 
+Results saved to fuzzer_results.json
+2025-05-21 06:39:41 - LLMFuzzer - INFO - 
+ Starting fuzzing for misinformation vulnerability
+2025-05-21 06:42:31 - LLMFuzzer - INFO - 
+Results saved to fuzzer_results.json
+2025-05-21 06:43:45 - LLMFuzzer - INFO - 
+ Starting fuzzing for misinformation vulnerability
+2025-05-21 06:44:14 - LLMFuzzer - INFO - 
+Results saved to fuzzer_results.json
+2025-05-21 06:44:39 - LLMFuzzer - INFO - 
+ Starting fuzzing for misinformation vulnerability
+2025-05-21 06:48:44 - LLMFuzzer - INFO - 
+ Starting fuzzing for misinformation vulnerability
+2025-05-21 06:50:45 - LLMFuzzer - INFO - 
+ Starting fuzzing for misinformation vulnerability
+2025-05-21 06:51:17 - LLMFuzzer - INFO - 
+ Starting fuzzing for misinformation vulnerability
+2025-05-21 07:00:05 - LLMFuzzer - INFO - 
+ Starting fuzzing for misinformation vulnerability
+2025-05-21 07:06:16 - LLMFuzzer - INFO - 
+ Starting fuzzing for misinformation vulnerability
+2025-05-21 07:06:46 - LLMFuzzer - INFO - 
+ Starting fuzzing for misinformation vulnerability
+2025-05-21 07:08:17 - LLMFuzzer - INFO - 
+ Starting fuzzing for misinformation vulnerability
+2025-05-21 07:10:28 - LLMFuzzer - INFO - 
+ Starting fuzzing for misinformation vulnerability
+2025-05-21 07:26:06 - LLMFuzzer - INFO - 
+ Starting fuzzing for misinformation vulnerability
+2025-05-21 07:29:04 - LLMFuzzer - INFO - 
+Results saved to fuzzer_results.json
+2025-05-21 09:15:06 - LLMFuzzer - INFO - 
+ Starting fuzzing for misinformation vulnerability
+2025-05-21 09:18:16 - LLMFuzzer - INFO - 
+Results saved to fuzzer_results.json
+2025-05-21 09:33:34 - LLMFuzzer - INFO - 
+ Starting fuzzing for sensitive_information_disclosure vulnerability
+2025-05-21 09:33:40 - LLMFuzzer - INFO - 
+Results saved to fuzzer_results.json
+2025-05-21 09:36:44 - LLMFuzzer - INFO - 
+ Starting fuzzing for sensitive_information_disclosure vulnerability
+2025-05-21 09:37:12 - LLMFuzzer - INFO - 
+Results saved to fuzzer_results.json
+2025-05-21 09:43:28 - LLMFuzzer - INFO - 
+ Starting fuzzing for sensitive_information_disclosure vulnerability
+2025-05-21 09:43:51 - LLMFuzzer - INFO - 
+Results saved to fuzzer_results.json
+2025-05-21 09:45:13 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 2 payloads from /home/misanthrope/Desktop/LLM_FUZZING_FRAMEWORK/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt
+2025-05-21 09:45:13 - LLMFuzzer - INFO - 
+ Starting fuzzing for unbounded_consumption vulnerability
+2025-05-21 09:45:13 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 1/2
+2025-05-21 09:45:17 - LLMFuzzer.UnboundedConsumption - ERROR - Error extracting field: the JSON object must be str, bytes or bytearray, not tuple
+2025-05-21 09:45:17 - LLMFuzzer.UnboundedConsumption - INFO - Testing payload 2/2
+2025-05-21 09:45:30 - LLMFuzzer - INFO - 
+Results saved to fuzzer_results.json
+2025-05-21 09:45:30 - LLMFuzzer.UnboundedConsumption - INFO - Loaded 2 payloads from /home/misanthrope/Desktop/LLM_FUZZING_FRAMEWORK/src/vulnerabilities/unbounded_consumption/./data/unbounded_consumption_payloads.txt

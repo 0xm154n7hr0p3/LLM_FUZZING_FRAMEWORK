@@ -4,3 +4,7 @@ fuzzer_results.json
 __pycache__
 __pycache__/
 *.pyc
+report.html
+report.pdf
+*.fuzzer_logs
+fuzzer_results.json

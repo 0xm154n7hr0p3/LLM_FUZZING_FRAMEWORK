@@ -165,6 +165,7 @@ class SensitiveInformationDisclosureFuzzer:
     def analyze_response(
         self, 
         test_case: Dict,
+        payload: str,
         response: str
     ) -> Dict[str, Union[str, bool, List]]:
         """
@@ -200,7 +201,8 @@ class SensitiveInformationDisclosureFuzzer:
         # Store analysis results
         analysis = {
             'test_name': test_name,
-            'prompt': prompt,
+            'prompt': payload,
+            'payload': payload,
             'full_response': response,
             'analyzed_text': analyzed_text,
             'is_successful': is_successful,
@@ -257,44 +259,65 @@ class SensitiveInformationDisclosureFuzzer:
         # Tracking metadata for the entire fuzzing session
         fuzzing_metadata = {
             'start_time': datetime.datetime.now().isoformat(),
-            'total_tests': len(self.tests),
+            'total_payloads': None,
             'endpoint': self.model_endpoint
         }
+        actual_payload_count = 0
         
         # Run each test
         for test_case in self.tests:
             try:
-                # Extract prompt from test case and replace placeholder with PII_Name
+                # Extract prompt from test case
                 prompt = test_case["prompt"].replace("{placeholder}", self.PII_Name)
                 
                 # Send request with payload
-                response = self.request_handler.send_request(
+                result = self.request_handler.send_request(
                     self.model_endpoint, 
                     prompt
                 )
+
                 
-                # Store original prompt for reference
-                original_prompt = test_case["prompt"]
-                
-                # Create a modified test case with the replaced prompt for analysis
-                modified_test_case = test_case.copy()
-                modified_test_case["prompt"] = prompt
-                
-                # Analyze the response
-                result_entry = self.analyze_response(
-                    test_case=modified_test_case,
-                    response=response
-                )
-                
-                # Add additional metadata to the result
-                result_entry.update({
-                    'timestamp': datetime.datetime.now().isoformat(),
-                    'prompt_length': len(prompt),
-                    'response_length': len(response),
-                    'original_prompt': original_prompt  # Store the original prompt with placeholder
-                })
-                
-                individual_results.append(result_entry)
+                # Handle both single response and multiple responses
+                if isinstance(result, list):  # If we got multiple results back
+                    # Process each response/payload pair
+                    for response, processed_payload in result:
+                        
+                        # Analyze the response
+                        actual_payload_count += 1
+                        result_entry = self.analyze_response(
+                            test_case=test_case,
+                            payload=processed_payload,
+                            response=response
+                        )
+                        
+                        # Add additional metadata to the result
+                        result_entry.update({
+                            'timestamp': datetime.datetime.now().isoformat(),
+                            'prompt_length': len(processed_payload),
+                            'response_length': len(response)
+                        })
+                        
+                        individual_results.append(result_entry)
+
+                else:  # Single response case
+                    response, processed_payload = result
+                    actual_payload_count += 1
+                    
+                    # Analyze the response
+                    result_entry = self.analyze_response(
+                        test_case=test_case,
+                        payload=processed_payload,
+                        response=response
+                    )
+                    
+                    # Add additional metadata to the result
+                    result_entry.update({
+                        'timestamp': datetime.datetime.now().isoformat(),
+                        'prompt_length': len(prompt),
+                        'response_length': len(response)
+                    })
+                    
+                    individual_results.append(result_entry)
             
             except Exception as e:
                 # Handle and log any errors during fuzzing
@@ -308,6 +331,9 @@ class SensitiveInformationDisclosureFuzzer:
                 }
                 individual_results.append(error_entry)
         
+        # Update total payload count in metadata
+        fuzzing_metadata['total_payloads'] = actual_payload_count
+        
         # Use integrated aggregation
         aggregated_results = self.aggregate_results(individual_results)
         
@@ -318,7 +344,7 @@ class SensitiveInformationDisclosureFuzzer:
         aggregated_results['insights'] = self._generate_insights(aggregated_results)
         
         return aggregated_results
-    
+
     def _generate_insights(self, results: Dict) -> Dict:
         """
         Generate additional insights from fuzzing results
@@ -326,19 +352,22 @@ class SensitiveInformationDisclosureFuzzer:
         :param results: Aggregated fuzzing results
         :return: Insights dictionary
         """
-        total_tests = results.get('total_tests', 0)
+        fuzzing_metadata= results['fuzzing_metadata']
+        total_payloads=fuzzing_metadata['total_payloads']
         
         insights = {
-            'success_rate': len(results['successful_exploits']) / total_tests * 100 if total_tests > 0 else 0,
-            'block_rate': len(results['blocked_attempts']) / total_tests * 100 if total_tests > 0 else 0,
-            'most_revealing_tests': sorted(
+            'success_rate': len(results['successful_exploits']) /  total_payloads * 100 if  total_payloads > 0 else 0,
+            'block_rate': len(results['blocked_attempts']) /  total_payloads * 100 if  total_payloads > 0 else 0,
+            'most_revealing_payloads': sorted(
                 results['successful_exploits'], 
                 key=lambda x: len(x.get('full_response', '')), 
                 reverse=True
-            )[:5] if results['successful_exploits'] else []  # Top 5 most revealing tests
+            )[:5] if results['successful_exploits'] else []  # Top 5 most revealing payloads
         }
         
         return insights
+    
+
 
     def display_results(self, results: Dict[str, Any], response_field: str = None) -> None:
         """

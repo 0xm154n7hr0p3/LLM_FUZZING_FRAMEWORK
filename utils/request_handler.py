@@ -248,7 +248,7 @@ class RequestHandler:
                     prompts = self.bypass_technique_function(self.encoder_name,prompt)
                 else:
                     prompts = self.bypass_technique_function(prompt)
-                logger.info(f"Generated {len(prompts)} prompts using bypass technique")
+                
                 if isinstance(prompts, str):  # Check if it's a single string
                     try:
                         if self.raw_request_template:
@@ -271,6 +271,8 @@ class RequestHandler:
                         except requests.RequestException as e:
                             # Continue with the next prompt on failure
                             continue
+
+       
                     return results
                             
                 
